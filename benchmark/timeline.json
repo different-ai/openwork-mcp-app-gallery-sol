@@ -10,11 +10,11 @@
   "completedEpochMs": null,
   "totalElapsedMs": null,
   "estimatedActiveMs": null,
-  "externalWaitMs": 0,
+  "externalWaitMs": 69000,
   "ciWaitMs": 0,
   "vercelWaitMs": 0,
-  "reworkMs": 0,
-  "currentPhase": "P1",
+  "reworkMs": 642000,
+  "currentPhase": "P6",
   "finalVerdict": "Running",
   "milestones": [
     {
@@ -30,19 +30,141 @@
       "atUtc": "2026-08-17T17:22:23Z",
       "atLocal": "2026-08-17T19:22:23+02:00",
       "elapsedMs": 239000
+    },
+    {
+      "id": "M-003",
+      "name": "Local repository initialized",
+      "atUtc": "2026-08-17T17:25:30Z",
+      "atLocal": "2026-08-17T19:25:30+02:00",
+      "elapsedMs": 426000
+    },
+    {
+      "id": "M-004",
+      "name": "Private GitHub repository created and forward pushed",
+      "atUtc": "2026-08-17T17:25:30Z",
+      "atLocal": "2026-08-17T19:25:30+02:00",
+      "elapsedMs": 426000
+    },
+    {
+      "id": "M-005",
+      "name": "First working two-app local vertical",
+      "atUtc": "2026-08-17T17:56:51Z",
+      "atLocal": "2026-08-17T19:56:51+02:00",
+      "elapsedMs": 2307000
+    },
+    {
+      "id": "M-006",
+      "name": "First working six-app local catalog",
+      "atUtc": "2026-08-17T17:56:51Z",
+      "atLocal": "2026-08-17T19:56:51+02:00",
+      "elapsedMs": 2307000
+    },
+    {
+      "id": "M-007",
+      "name": "All six UIs passed the independent App bridge browser harness",
+      "atUtc": "2026-08-17T18:02:37Z",
+      "atLocal": "2026-08-17T20:02:37+02:00",
+      "elapsedMs": 2653000
+    },
+    {
+      "id": "M-008",
+      "name": "First green local release:check:ci",
+      "atUtc": "2026-08-17T18:12:33Z",
+      "atLocal": "2026-08-17T20:12:33+02:00",
+      "elapsedMs": 3249000
     }
   ],
   "phases": [
-    { "id": "P0", "name": "Authority and source freeze", "startedAtUtc": "2026-08-17T17:18:24Z", "endedAtUtc": "2026-08-17T17:22:23Z", "durationMs": 239000, "status": "Passed", "dominantCategory": "research-and-preflight" },
-    { "id": "P1", "name": "Repository foundation", "startedAtUtc": "2026-08-17T17:22:23Z", "endedAtUtc": null, "durationMs": null, "status": "Running", "dominantCategory": "implementation" },
-    { "id": "P2", "name": "Two-app vertical", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "implementation" },
-    { "id": "P3", "name": "Six-app catalog", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "implementation" },
-    { "id": "P4", "name": "Gallery experience", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "implementation" },
-    { "id": "P5", "name": "Public-runtime hardening", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "implementation-and-verification" },
-    { "id": "P6", "name": "CI and staging deploy", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "ci-and-vercel" },
-    { "id": "P7", "name": "Host compatibility proof", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "host-verification" },
-    { "id": "P8", "name": "Production release", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "vercel-and-verification" },
-    { "id": "P9", "name": "Operate and report", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "observation-and-reporting" }
+    {
+      "id": "P0",
+      "name": "Authority and source freeze",
+      "startedAtUtc": "2026-08-17T17:18:24Z",
+      "endedAtUtc": "2026-08-17T17:22:23Z",
+      "durationMs": 239000,
+      "status": "Passed",
+      "dominantCategory": "research-and-preflight"
+    },
+    {
+      "id": "P1",
+      "name": "Repository foundation",
+      "startedAtUtc": "2026-08-17T17:22:23Z",
+      "endedAtUtc": "2026-08-17T17:43:15Z",
+      "durationMs": 1252000,
+      "status": "Passed",
+      "dominantCategory": "implementation"
+    },
+    {
+      "id": "P2",
+      "name": "Two-app vertical",
+      "startedAtUtc": "2026-08-17T17:43:15Z",
+      "endedAtUtc": "2026-08-17T17:56:51Z",
+      "durationMs": 816000,
+      "status": "Passed",
+      "dominantCategory": "implementation"
+    },
+    {
+      "id": "P3",
+      "name": "Six-app catalog",
+      "startedAtUtc": "2026-08-17T17:56:51Z",
+      "endedAtUtc": "2026-08-17T17:56:51Z",
+      "durationMs": 0,
+      "status": "Passed",
+      "dominantCategory": "implementation"
+    },
+    {
+      "id": "P4",
+      "name": "Gallery experience",
+      "startedAtUtc": "2026-08-17T17:56:51Z",
+      "endedAtUtc": "2026-08-17T18:02:37Z",
+      "durationMs": 346000,
+      "status": "Passed",
+      "dominantCategory": "implementation"
+    },
+    {
+      "id": "P5",
+      "name": "Public-runtime hardening",
+      "startedAtUtc": "2026-08-17T18:02:37Z",
+      "endedAtUtc": "2026-08-17T18:12:33Z",
+      "durationMs": 596000,
+      "status": "Passed",
+      "dominantCategory": "implementation-and-verification"
+    },
+    {
+      "id": "P6",
+      "name": "CI and staging deploy",
+      "startedAtUtc": "2026-08-17T18:12:33Z",
+      "endedAtUtc": null,
+      "durationMs": null,
+      "status": "Running",
+      "dominantCategory": "ci-and-vercel"
+    },
+    {
+      "id": "P7",
+      "name": "Host compatibility proof",
+      "startedAtUtc": null,
+      "endedAtUtc": null,
+      "durationMs": null,
+      "status": "Pending",
+      "dominantCategory": "host-verification"
+    },
+    {
+      "id": "P8",
+      "name": "Production release",
+      "startedAtUtc": null,
+      "endedAtUtc": null,
+      "durationMs": null,
+      "status": "Pending",
+      "dominantCategory": "vercel-and-verification"
+    },
+    {
+      "id": "P9",
+      "name": "Operate and report",
+      "startedAtUtc": null,
+      "endedAtUtc": null,
+      "durationMs": null,
+      "status": "Pending",
+      "dominantCategory": "observation-and-reporting"
+    }
   ],
   "events": [
     {
@@ -66,9 +188,680 @@
       "event": "Read the execution contract and source plan; refreshed Snacks forward; verified GitHub and Vercel authentication; checked only the SOL targets; froze official source, dependency, protocol, and licensing inputs.",
       "result": "Passed",
       "relatedIdentifier": "ext-apps@10195ad;mcp-handler@7c8fe0a"
+    },
+    {
+      "id": "EVT-003",
+      "atUtc": "2026-08-17T17:25:30Z",
+      "atLocal": "2026-08-17T19:25:30+02:00",
+      "elapsedMs": 426000,
+      "phase": "P1",
+      "category": "git-and-github",
+      "event": "Initialized forward, committed truthful governance and timing records, created the private SOL repository, and pushed the only expected direct bootstrap commit.",
+      "result": "Passed",
+      "relatedIdentifier": "44b5ae3"
+    },
+    {
+      "id": "EVT-004",
+      "atUtc": "2026-08-17T17:25:30Z",
+      "atLocal": "2026-08-17T19:25:30+02:00",
+      "elapsedMs": 426000,
+      "phase": "P1",
+      "category": "github",
+      "event": "Explicit default-branch edit returned HTTP 422 immediately after push; direct reads then proved forward was already the default and only branch.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-001"
+    },
+    {
+      "id": "EVT-005",
+      "atUtc": "2026-08-17T17:26:02Z",
+      "atLocal": "2026-08-17T19:26:02+02:00",
+      "elapsedMs": 458000,
+      "phase": "P1",
+      "category": "github",
+      "event": "First branch-protection write returned a provider HTTP 503; follow-up read confirmed protection was not yet applied.",
+      "result": "Investigating",
+      "relatedIdentifier": "ISS-002"
+    },
+    {
+      "id": "EVT-006",
+      "atUtc": "2026-08-17T17:27:11Z",
+      "atLocal": "2026-08-17T19:27:11+02:00",
+      "elapsedMs": 527000,
+      "phase": "P1",
+      "category": "github",
+      "event": "Retried the same bounded protection request after the transient provider failure and verified the enforced no-direct-push policy.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-002"
+    },
+    {
+      "id": "EVT-007",
+      "atUtc": "2026-08-17T17:43:15Z",
+      "atLocal": "2026-08-17T19:43:15+02:00",
+      "elapsedMs": 1491000,
+      "phase": "P2",
+      "category": "build",
+      "event": "First deterministic Get Time bundle measured 539002 bytes and correctly failed the 524288-byte resource ceiling.",
+      "result": "Investigating",
+      "relatedIdentifier": "ISS-003;REG-001"
+    },
+    {
+      "id": "EVT-008",
+      "atUtc": "2026-08-17T17:49:18Z",
+      "atLocal": "2026-08-17T19:49:18+02:00",
+      "elapsedMs": 1854000,
+      "phase": "P2",
+      "category": "build",
+      "event": "Completed the size-bounded UI adaptation; all six resources measured between 335863 and 354133 bytes.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-003;REG-001"
+    },
+    {
+      "id": "EVT-009",
+      "atUtc": "2026-08-17T17:50:13Z",
+      "atLocal": "2026-08-17T19:50:13+02:00",
+      "elapsedMs": 1909000,
+      "phase": "P2",
+      "category": "typecheck",
+      "event": "First strict typecheck exposed the Terser target literal, unchecked manifest indexing, and named mcp-handler export mismatches.",
+      "result": "Investigating",
+      "relatedIdentifier": "ISS-004;REG-002"
+    },
+    {
+      "id": "EVT-010",
+      "atUtc": "2026-08-17T17:51:10Z",
+      "atLocal": "2026-08-17T19:51:10+02:00",
+      "elapsedMs": 1966000,
+      "phase": "P2",
+      "category": "typecheck",
+      "event": "Corrected the four integration type contracts; strict tsc --noEmit passed.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-004;REG-002"
+    },
+    {
+      "id": "EVT-011",
+      "atUtc": "2026-08-17T17:56:51Z",
+      "atLocal": "2026-08-17T19:56:51+02:00",
+      "elapsedMs": 2307000,
+      "phase": "P2",
+      "category": "protocol-verification",
+      "event": "All six current 2026-07-28 and all six legacy Streamable HTTP contracts passed, including isolated tools/resources, ordinary fallback, repeated cycles, and 20 representative clients.",
+      "result": "Passed",
+      "relatedIdentifier": "M-005;M-006"
+    },
+    {
+      "id": "EVT-012",
+      "atUtc": "2026-08-17T17:58:42Z",
+      "atLocal": "2026-08-17T19:58:42+02:00",
+      "elapsedMs": 2418000,
+      "phase": "P4",
+      "category": "typecheck",
+      "event": "The official ext-apps AppBridge declaration entrypoint failed strict NodeNext resolution because its published declarations use extensionless internal imports.",
+      "result": "Investigating",
+      "relatedIdentifier": "ISS-005"
+    },
+    {
+      "id": "EVT-013",
+      "atUtc": "2026-08-17T17:59:19Z",
+      "atLocal": "2026-08-17T19:59:19+02:00",
+      "elapsedMs": 2455000,
+      "phase": "P4",
+      "category": "typecheck",
+      "event": "Isolated the third-party declaration defect behind a narrow typed browser-test runtime shim; strict checking remained enabled and passed.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-005"
+    },
+    {
+      "id": "EVT-014",
+      "atUtc": "2026-08-17T18:01:07Z",
+      "atLocal": "2026-08-17T20:01:07+02:00",
+      "elapsedMs": 2563000,
+      "phase": "P4",
+      "category": "browser-verification",
+      "event": "The first Playwright run exposed a development-only asset routing collision: the screenshot route intercepted the gallery CSS and JavaScript, breaking copy behavior and the 320 px layout. Three additional failures were locator ambiguities in the new test harness.",
+      "result": "Investigating",
+      "relatedIdentifier": "ISS-006;REG-003"
+    },
+    {
+      "id": "EVT-015",
+      "atUtc": "2026-08-17T18:02:37Z",
+      "atLocal": "2026-08-17T20:02:37+02:00",
+      "elapsedMs": 2653000,
+      "phase": "P4",
+      "category": "browser-verification",
+      "event": "Repaired development asset fallthrough and stable test locators; all six MCP App UIs initialized in the official AppBridge host and all ten browser/accessibility checks passed.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-006;REG-003;M-007"
+    },
+    {
+      "id": "EVT-016",
+      "atUtc": "2026-08-17T18:04:26Z",
+      "atLocal": "2026-08-17T20:04:26+02:00",
+      "elapsedMs": 2762000,
+      "phase": "P5",
+      "category": "lint-and-security",
+      "event": "Typed linting rejected object spread over the full HeadersInit union, correctly identifying unsafe behavior for tuple-array header inputs.",
+      "result": "Investigating",
+      "relatedIdentifier": "ISS-007;REG-004"
+    },
+    {
+      "id": "EVT-017",
+      "atUtc": "2026-08-17T18:05:34Z",
+      "atLocal": "2026-08-17T20:05:34+02:00",
+      "elapsedMs": 2830000,
+      "phase": "P5",
+      "category": "lint-and-security",
+      "event": "Replaced generic header object spreading with the platform Headers API and reran lint, typecheck, gateway tests, and browser checks.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-007;REG-004"
+    },
+    {
+      "id": "EVT-018",
+      "atUtc": "2026-08-17T18:07:38Z",
+      "atLocal": "2026-08-17T20:07:38+02:00",
+      "elapsedMs": 2954000,
+      "phase": "P5",
+      "category": "secret-scan",
+      "event": "The first repository secret scan falsely matched the uppercase VERCEL_PROJECT_PRODUCTION_URL identifier because the credential-prefix expression was case-insensitive.",
+      "result": "Investigating",
+      "relatedIdentifier": "ISS-008;REG-005"
+    },
+    {
+      "id": "EVT-019",
+      "atUtc": "2026-08-17T18:07:53Z",
+      "atLocal": "2026-08-17T20:07:53+02:00",
+      "elapsedMs": 2969000,
+      "phase": "P5",
+      "category": "secret-scan",
+      "event": "Scoped the Vercel credential prefix to its real lowercase token form; the repository-wide scan passed without suppressing token-shaped values.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-008;REG-005"
+    },
+    {
+      "id": "EVT-020",
+      "atUtc": "2026-08-17T18:08:03Z",
+      "atLocal": "2026-08-17T20:08:03+02:00",
+      "elapsedMs": 2979000,
+      "phase": "P5",
+      "category": "dependency-audit",
+      "event": "The production dependency audit passed; the complete audit found the moderate GHSA-48c2-rrv3-qjmp advisory in the direct development YAML dependency at 2.8.1.",
+      "result": "Investigating",
+      "relatedIdentifier": "ISS-009"
+    },
+    {
+      "id": "EVT-021",
+      "atUtc": "2026-08-17T18:08:15Z",
+      "atLocal": "2026-08-17T20:08:15+02:00",
+      "elapsedMs": 2991000,
+      "phase": "P5",
+      "category": "dependency-audit",
+      "event": "Upgraded the exact YAML development dependency to patched 2.8.3 and regenerated the lock and SBOM; the complete audit returned no known vulnerabilities.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-009"
+    },
+    {
+      "id": "EVT-022",
+      "atUtc": "2026-08-17T18:12:33Z",
+      "atLocal": "2026-08-17T20:12:33+02:00",
+      "elapsedMs": 3249000,
+      "phase": "P5",
+      "category": "release-verification",
+      "event": "The first complete local release:check:ci passed: frozen install, formatting, lint, strict types, 42 Vitest checks, 10 Playwright checks, notices, provenance, architecture, full audit, source and secret scans, SBOM, deterministic resources, public gallery, and production-shaped build.",
+      "result": "Passed",
+      "relatedIdentifier": "M-008"
     }
   ],
-  "issues": [],
-  "regressions": [],
-  "deployments": []
+  "issues": [
+    {
+      "id": "ISS-001",
+      "firstObservedAtUtc": "2026-08-17T17:25:30Z",
+      "firstObservedElapsedMs": 426000,
+      "resolvedAtUtc": "2026-08-17T17:25:30Z",
+      "resolvedElapsedMs": 426000,
+      "phase": "P1",
+      "classification": "GitHub",
+      "origin": "external",
+      "expectedBehavior": "Explicitly setting the pushed forward branch as default succeeds.",
+      "observedBehavior": "GitHub returned HTTP 422 immediately after the first push.",
+      "symptom": "Repository.default_branch is invalid",
+      "rootCause": "Repository initialization and branch propagation raced with a redundant edit; GitHub had already selected the only pushed branch.",
+      "attempts": [
+        "Inspected the exact repository",
+        "Listed only the exact repository branches"
+      ],
+      "finalCorrection": "No mutation required; exact reads proved forward was already default.",
+      "affectedFiles": [],
+      "affectedCommits": [],
+      "invalidatedProof": [],
+      "closingVerification": "Repository view returned default branch forward and branch listing returned only forward.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": null,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-002",
+      "firstObservedAtUtc": "2026-08-17T17:26:02Z",
+      "firstObservedElapsedMs": 458000,
+      "resolvedAtUtc": "2026-08-17T17:27:11Z",
+      "resolvedElapsedMs": 527000,
+      "phase": "P1",
+      "classification": "GitHub",
+      "origin": "external",
+      "expectedBehavior": "The exact forward protection request succeeds.",
+      "observedBehavior": "The write returned HTTP 503 and the read returned Branch not protected.",
+      "symptom": "No server is currently available to service your request.",
+      "rootCause": "GitHub provider endpoint unavailable for the first exact protection attempt.",
+      "attempts": [
+        "Exact REST protection write",
+        "Exact protection read",
+        "Bounded retry of the same protection write",
+        "Exact closing protection read"
+      ],
+      "finalCorrection": "The bounded retry succeeded without changing the intended policy.",
+      "affectedFiles": [],
+      "affectedCommits": [],
+      "invalidatedProof": ["branch-protection"],
+      "closingVerification": "Admin enforcement, pull-request requirement, linear history, conversation resolution, no force pushes, and no deletions all reported the intended values.",
+      "timeToDetectMs": 0,
+      "timeToRepairMs": 69000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-003",
+      "firstObservedAtUtc": "2026-08-17T17:43:15Z",
+      "firstObservedElapsedMs": 1491000,
+      "resolvedAtUtc": "2026-08-17T17:49:18Z",
+      "resolvedElapsedMs": 1854000,
+      "phase": "P2",
+      "classification": "implementation",
+      "origin": "self-introduced",
+      "expectedBehavior": "Every deterministic single-file MCP App resource is at most 524288 bytes.",
+      "observedBehavior": "The first Get Time build was 539002 bytes and failed closed.",
+      "symptom": "Resource ceiling exception from the bundle generator.",
+      "rootCause": "The initial Vite configuration used esbuild single-pass minification for a React plus MCP Apps bridge bundle.",
+      "attempts": [
+        "Complete deterministic build using esbuild minification",
+        "Three-pass Terser build",
+        "Five-pass top-level Terser build",
+        "Complete six-app build using a lightweight Chart.js API adapter",
+        "Gallery-owned size-bounded adaptations for three React-heavy views"
+      ],
+      "finalCorrection": "Retained the frozen upstream audit snapshot, used gallery-owned vanilla MCP Apps adaptations for Get Time, Cohort Heatmap, and Scenario Modeler, and aliased broad Chart.js registration to a bounded canvas implementation for the other chart views.",
+      "affectedFiles": [
+        "scripts/bundle-mcp-app-resources.ts",
+        "package.json",
+        "pnpm-lock.yaml"
+      ],
+      "affectedCommits": [],
+      "invalidatedProof": ["resource-size", "two-app-vertical"],
+      "closingVerification": "All six resources passed: 335863, 354133, 337864, 348890, 339570, and 345103 bytes.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 363000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-004",
+      "firstObservedAtUtc": "2026-08-17T17:50:13Z",
+      "firstObservedElapsedMs": 1909000,
+      "resolvedAtUtc": "2026-08-17T17:51:10Z",
+      "resolvedElapsedMs": 1966000,
+      "phase": "P2",
+      "classification": "implementation",
+      "origin": "self-introduced",
+      "expectedBehavior": "Strict TypeScript with unchecked indexed access passes.",
+      "observedBehavior": "The first check rejected four bounded integration type contracts.",
+      "symptom": "tsc --noEmit exited with declaration errors.",
+      "rootCause": "Initial integration code used looser inferred types and the README export presentation instead of the published declarations.",
+      "attempts": [
+        "First strict TypeScript check",
+        "Targeted declaration corrections",
+        "Closing strict TypeScript check"
+      ],
+      "finalCorrection": "Used the published named createMcpHandler export, explicit public-manifest types, tuple literals for header assertions, and the supported Terser ECMA target.",
+      "affectedFiles": [
+        "scripts/bundle-mcp-app-resources.ts",
+        "scripts/check-vercel-architecture.ts",
+        "src/gallery-render.ts",
+        "src/mcp-app-adapter.ts"
+      ],
+      "affectedCommits": [],
+      "invalidatedProof": ["typecheck", "two-app-vertical"],
+      "closingVerification": "Strict tsc --noEmit passed with zero errors.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 57000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-005",
+      "firstObservedAtUtc": "2026-08-17T17:58:42Z",
+      "firstObservedElapsedMs": 2418000,
+      "resolvedAtUtc": "2026-08-17T17:59:19Z",
+      "resolvedElapsedMs": 2455000,
+      "phase": "P4",
+      "classification": "third-party-declarations",
+      "origin": "external",
+      "expectedBehavior": "The official ext-apps AppBridge entrypoint typechecks under the repository's strict NodeNext configuration.",
+      "observedBehavior": "The package's declarations referenced extensionless internal modules and failed TS2834/TS2835 before any browser bundle was built.",
+      "symptom": "Strict typecheck failed inside ext-apps app-bridge.d.ts.",
+      "rootCause": "The published 1.7.5 AppBridge declaration bundle is not NodeNext-extension-clean even though its browser JavaScript entrypoint is valid.",
+      "attempts": [
+        "Imported the official package entrypoint directly under strict NodeNext",
+        "Inspected the frozen upstream bridge implementation and published declaration surface",
+        "Introduced a minimal local type boundary that re-exports the unchanged official browser runtime"
+      ],
+      "finalCorrection": "Kept skipLibCheck disabled and isolated only the test-host runtime re-export behind a narrow gallery-owned declaration shim.",
+      "affectedFiles": [
+        "test-support/browser-host.ts",
+        "test-support/ext-apps-app-bridge-runtime.js",
+        "test-support/ext-apps-app-bridge-runtime.d.ts"
+      ],
+      "affectedCommits": [],
+      "invalidatedProof": ["typecheck", "browser-host-build"],
+      "closingVerification": "Strict tsc and the Vite browser-host build passed, followed by all six real-browser AppBridge initializations.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 37000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-006",
+      "firstObservedAtUtc": "2026-08-17T18:01:07Z",
+      "firstObservedElapsedMs": 2563000,
+      "resolvedAtUtc": "2026-08-17T18:02:37Z",
+      "resolvedElapsedMs": 2653000,
+      "phase": "P4",
+      "classification": "browser-verification",
+      "origin": "self-introduced",
+      "expectedBehavior": "The local browser server serves gallery CSS, JavaScript, and screenshots while every UI initializes in the independent AppBridge host.",
+      "observedBehavior": "The broad screenshot route returned 404 for content-hashed gallery CSS/JS, so copy behavior did not attach and the unstyled 320 px layout overflowed; three other failures were ambiguous accessibility-role locators.",
+      "symptom": "First Playwright run reported five failures and explicit CSS/JS request failures.",
+      "rootCause": "The development wrapper intercepted all /assets/:filename requests instead of falling through non-screenshot assets to the Hono application; dynamic role locators also changed identity after UI updates.",
+      "attempts": [
+        "Ran the complete ten-test Playwright matrix",
+        "Reproduced failed content-hashed requests in a standalone headless browser probe",
+        "Narrowed screenshot handling and stabilized locators against immutable element identifiers",
+        "Reran the full Playwright matrix"
+      ],
+      "finalCorrection": "Served only known screenshot digests in the wrapper and delegated other assets to the application; used stable CSS/id locators where ARIA role sets legitimately contained multiple live regions.",
+      "affectedFiles": [
+        "scripts/dev.ts",
+        "tests/browser/gallery.spec.ts",
+        "tests/browser/mcp-app-host.spec.ts"
+      ],
+      "affectedCommits": [],
+      "invalidatedProof": [
+        "browser-rendering",
+        "copy-url",
+        "accessibility",
+        "320px-layout",
+        "ui-tool-interaction"
+      ],
+      "closingVerification": "All ten Playwright checks passed, including six AppBridge hosts, copy/clipboard behavior, keyboard focus, accessible names, alternatives, and 320 px layout.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 90000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-007",
+      "firstObservedAtUtc": "2026-08-17T18:04:26Z",
+      "firstObservedElapsedMs": 2762000,
+      "resolvedAtUtc": "2026-08-17T18:05:34Z",
+      "resolvedElapsedMs": 2830000,
+      "phase": "P5",
+      "classification": "runtime-hardening",
+      "origin": "self-introduced",
+      "expectedBehavior": "All valid HeadersInit representations are composed without semantic change.",
+      "observedBehavior": "Typed linting proved that spreading a tuple-array HeadersInit into an object would create numeric keys rather than HTTP headers.",
+      "symptom": "no-misused-spread failed in error, CORS, and test request header construction.",
+      "rootCause": "Initial helper signatures accepted the full web-platform HeadersInit union while implementation assumed a plain record.",
+      "attempts": [
+        "Ran type-aware strict linting",
+        "Replaced generic error/test header composition with new Headers",
+        "Narrowed the internally constructed CORS return type to Record<string,string>"
+      ],
+      "finalCorrection": "Used the platform Headers API for union-safe composition and retained record spread only for a function that always returns a record.",
+      "affectedFiles": ["src/gateway.ts", "tests/gateway/boundaries.test.ts"],
+      "affectedCommits": [],
+      "invalidatedProof": ["lint", "gateway-headers"],
+      "closingVerification": "Lint, typecheck, 42 Vitest checks, and ten browser checks passed in the complete local release gate.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 68000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-008",
+      "firstObservedAtUtc": "2026-08-17T18:07:38Z",
+      "firstObservedElapsedMs": 2954000,
+      "resolvedAtUtc": "2026-08-17T18:07:53Z",
+      "resolvedElapsedMs": 2969000,
+      "phase": "P5",
+      "classification": "verification-harness",
+      "origin": "self-introduced",
+      "expectedBehavior": "The repository secret scan recognizes real token prefixes without rejecting ordinary uppercase environment identifiers.",
+      "observedBehavior": "A case-insensitive Vercel-token prefix expression matched VERCEL_PROJECT_PRODUCTION_URL in source.",
+      "symptom": "Secret scan failed on src/base-url.ts despite no credential value being present.",
+      "rootCause": "The token scanner made the provider prefix case-insensitive even though issued token prefixes are lowercase.",
+      "attempts": [
+        "Ran the repository-wide secret scanner",
+        "Inspected only the matching source identifier and scanner expression",
+        "Removed case-insensitivity without adding a path or value suppression"
+      ],
+      "finalCorrection": "Matched real lowercase Vercel/vcp credential prefixes while continuing to scan the same complete source set.",
+      "affectedFiles": ["scripts/scan-secrets.ts"],
+      "affectedCommits": [],
+      "invalidatedProof": ["secret-scan", "public-readiness"],
+      "closingVerification": "The scan passed 117 text files and remained part of the green complete release gate.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 15000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-009",
+      "firstObservedAtUtc": "2026-08-17T18:08:03Z",
+      "firstObservedElapsedMs": 2979000,
+      "resolvedAtUtc": "2026-08-17T18:08:15Z",
+      "resolvedElapsedMs": 2991000,
+      "phase": "P5",
+      "classification": "dependency-security",
+      "origin": "external",
+      "expectedBehavior": "Both production and complete locked dependency audits report no known vulnerability.",
+      "observedBehavior": "The production audit was clean, but the complete audit reported moderate GHSA-48c2-rrv3-qjmp in direct development dependency yaml 2.8.1.",
+      "symptom": "pnpm audit reported one moderate stack-overflow advisory with patched version 2.8.3.",
+      "rootCause": "The initially pinned YAML build dependency predated the advisory's patched 2.8.3 release.",
+      "attempts": [
+        "Ran the production-only audit",
+        "Ran the complete JSON audit and reviewed the exact advisory path",
+        "Upgraded only the direct YAML dependency to the first patched compatible release",
+        "Regenerated the lock and SBOM and reran the complete audit"
+      ],
+      "finalCorrection": "Pinned yaml 2.8.3 exactly; no runtime dependency or production behavior changed.",
+      "affectedFiles": [
+        "package.json",
+        "pnpm-lock.yaml",
+        "generated/sbom.cdx.json"
+      ],
+      "affectedCommits": [],
+      "invalidatedProof": ["dependency-audit", "sbom", "release-check"],
+      "closingVerification": "The complete audit returned no known vulnerabilities and the full release gate regenerated the SBOM.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 12000,
+      "status": "Resolved"
+    }
+  ],
+  "regressions": [
+    {
+      "id": "REG-001",
+      "issueId": "ISS-003",
+      "introducedAtUtc": null,
+      "detectedAtUtc": "2026-08-17T17:43:15Z",
+      "correctedAtUtc": "2026-08-17T17:49:18Z",
+      "responsibleCommit": null,
+      "correctionCommit": null,
+      "symptom": "Get Time resource measured 539002 bytes.",
+      "userImpact": "None; the fail-closed generator prevented publication or deployment.",
+      "invalidatedProof": ["resource-size", "two-app-vertical"],
+      "closingVerification": "Full six-app generator passed; the largest resource was 354133 bytes, below 524288.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 363000,
+      "status": "Resolved"
+    },
+    {
+      "id": "REG-002",
+      "issueId": "ISS-004",
+      "introducedAtUtc": null,
+      "detectedAtUtc": "2026-08-17T17:50:13Z",
+      "correctedAtUtc": "2026-08-17T17:51:10Z",
+      "responsibleCommit": null,
+      "correctionCommit": null,
+      "symptom": "Strict typecheck failed before runtime testing.",
+      "userImpact": "None; no candidate was committed, pushed, or deployed.",
+      "invalidatedProof": ["typecheck", "two-app-vertical"],
+      "closingVerification": "Strict tsc --noEmit passed with zero errors.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 57000,
+      "status": "Resolved"
+    },
+    {
+      "id": "REG-003",
+      "issueId": "ISS-006",
+      "introducedAtUtc": null,
+      "detectedAtUtc": "2026-08-17T18:01:07Z",
+      "correctedAtUtc": "2026-08-17T18:02:37Z",
+      "responsibleCommit": null,
+      "correctionCommit": null,
+      "symptom": "Development CSS and JavaScript returned 404, breaking copy behavior and mobile layout in the first browser run.",
+      "userImpact": "None; the defect existed only in uncommitted local browser-test serving and was blocked before publication.",
+      "invalidatedProof": [
+        "browser-rendering",
+        "copy-url",
+        "accessibility",
+        "320px-layout",
+        "ui-tool-interaction"
+      ],
+      "closingVerification": "All ten Playwright checks passed after exact asset routing and locator repairs.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 90000,
+      "status": "Resolved"
+    },
+    {
+      "id": "REG-004",
+      "issueId": "ISS-007",
+      "introducedAtUtc": null,
+      "detectedAtUtc": "2026-08-17T18:04:26Z",
+      "correctedAtUtc": "2026-08-17T18:05:34Z",
+      "responsibleCommit": null,
+      "correctionCommit": null,
+      "symptom": "Tuple-array HeadersInit values would have been spread into numeric object keys.",
+      "userImpact": "None; typed lint found the uncommitted edge case before publication.",
+      "invalidatedProof": ["lint", "gateway-headers"],
+      "closingVerification": "Platform Headers composition passed lint, typecheck, gateway tests, browser tests, and the full release gate.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 68000,
+      "status": "Resolved"
+    },
+    {
+      "id": "REG-005",
+      "issueId": "ISS-008",
+      "introducedAtUtc": null,
+      "detectedAtUtc": "2026-08-17T18:07:38Z",
+      "correctedAtUtc": "2026-08-17T18:07:53Z",
+      "responsibleCommit": null,
+      "correctionCommit": null,
+      "symptom": "Secret scan falsely classified an uppercase Vercel environment identifier as a token.",
+      "userImpact": "None; the false positive blocked only local release verification.",
+      "invalidatedProof": ["secret-scan", "public-readiness"],
+      "closingVerification": "The same full source set passed after narrowing only the real credential prefix case.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 15000,
+      "status": "Resolved"
+    }
+  ],
+  "deployments": [],
+  "waits": [
+    {
+      "id": "WAIT-001",
+      "classification": "github-provider",
+      "startedAtUtc": "2026-08-17T17:26:02Z",
+      "endedAtUtc": "2026-08-17T17:27:11Z",
+      "durationMs": 69000,
+      "outcome": "Branch-protection retry succeeded."
+    }
+  ],
+  "rework": [
+    {
+      "id": "REWORK-001",
+      "approach": "Vite single-file build with esbuild minification",
+      "reasonChosen": "Fast deterministic default",
+      "reasonAbandoned": "Get Time exceeded the 512 KiB resource ceiling",
+      "startedAtUtc": "2026-08-17T17:43:15Z",
+      "endedAtUtc": "2026-08-17T17:49:18Z",
+      "elapsedMs": 363000,
+      "retainedWork": "Source import, Vite pipeline, and fail-closed size check",
+      "correctiveDirection": "Frozen upstream snapshot plus gallery-owned size-bounded UI and chart adaptations"
+    },
+    {
+      "id": "REWORK-002",
+      "approach": "Loosely inferred initial integration types",
+      "reasonChosen": "Fast first vertical",
+      "reasonAbandoned": "Strict declarations rejected four bounded mismatches",
+      "startedAtUtc": "2026-08-17T17:50:13Z",
+      "endedAtUtc": "2026-08-17T17:51:10Z",
+      "elapsedMs": 57000,
+      "retainedWork": "Runtime design and exact dependencies",
+      "correctiveDirection": "Match published declarations and retain strict unchecked-index enforcement"
+    },
+    {
+      "id": "REWORK-003",
+      "approach": "Direct strict import of the published ext-apps AppBridge declarations",
+      "reasonChosen": "Use the official host bridge without a local type boundary",
+      "reasonAbandoned": "Published extensionless declaration imports fail strict NodeNext resolution",
+      "startedAtUtc": "2026-08-17T17:58:42Z",
+      "endedAtUtc": "2026-08-17T17:59:19Z",
+      "elapsedMs": 37000,
+      "retainedWork": "Unchanged official browser runtime and host design",
+      "correctiveDirection": "Narrow typed runtime re-export while retaining skipLibCheck=false"
+    },
+    {
+      "id": "REWORK-004",
+      "approach": "Broad development /assets screenshot route and dynamic role locators",
+      "reasonChosen": "Compact local browser server and accessibility-oriented tests",
+      "reasonAbandoned": "The route intercepted gallery assets and mutable accessible names made locators unstable",
+      "startedAtUtc": "2026-08-17T18:01:07Z",
+      "endedAtUtc": "2026-08-17T18:02:37Z",
+      "elapsedMs": 90000,
+      "retainedWork": "Independent AppBridge host, six UI flows, and accessibility assertions",
+      "correctiveDirection": "Exact screenshot routing plus application fallthrough and immutable locators"
+    },
+    {
+      "id": "REWORK-005",
+      "approach": "Object spread over generic HeadersInit values",
+      "reasonChosen": "Concise header composition",
+      "reasonAbandoned": "Tuple-array HeadersInit has incompatible object-spread semantics",
+      "startedAtUtc": "2026-08-17T18:04:26Z",
+      "endedAtUtc": "2026-08-17T18:05:34Z",
+      "elapsedMs": 68000,
+      "retainedWork": "Header policies and gateway boundaries",
+      "correctiveDirection": "Platform Headers API for union-safe composition"
+    },
+    {
+      "id": "REWORK-006",
+      "approach": "Case-insensitive provider credential-prefix scan",
+      "reasonChosen": "Conservative token detection",
+      "reasonAbandoned": "It misclassified uppercase environment identifiers without increasing real lowercase token coverage",
+      "startedAtUtc": "2026-08-17T18:07:38Z",
+      "endedAtUtc": "2026-08-17T18:07:53Z",
+      "elapsedMs": 15000,
+      "retainedWork": "Repository-wide scan scope and all other credential patterns",
+      "correctiveDirection": "Match the provider's real lowercase token prefix"
+    },
+    {
+      "id": "REWORK-007",
+      "approach": "Direct YAML build dependency at 2.8.1",
+      "reasonChosen": "Current exact build-tool pin at implementation start",
+      "reasonAbandoned": "Complete audit found a patched moderate stack-overflow advisory",
+      "startedAtUtc": "2026-08-17T18:08:03Z",
+      "endedAtUtc": "2026-08-17T18:08:15Z",
+      "elapsedMs": 12000,
+      "retainedWork": "Same YAML API and deterministic build behavior",
+      "correctiveDirection": "Exact patched 2.8.3 pin with regenerated lock and SBOM"
+    }
+  ]
 }
