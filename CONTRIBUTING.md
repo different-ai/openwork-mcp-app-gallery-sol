@@ -49,3 +49,10 @@ Gallery-owned UI adaptations must stay outside `upstream/`, carry an explicit ra
 A pull request should explain the user outcome, architecture or contract changes, safety/privacy impact, source and license impact, exact verification performed, and any incomplete external proof. Do not describe missing proof as passed. Repairs should identify which prior evidence was invalidated and show the closing rerun.
 
 The mandatory checks are CI, CodeQL, dependency review or locked audit, public readiness, and the exact Vercel Preview check when connected. Merge readiness and production promotion are separate decisions.
+
+This repository is operated in a single-author release mode under a parent
+organization rule that requires a non-last-pusher approval. For same-repository
+pull requests, the `release-approval` CI job submits that approval only after
+the complete exact-head `release-check` passes. It does not replace or bypass
+the independently required CodeQL, dependency, public-readiness, Preview,
+signature, freshness, or conversation-resolution gates.

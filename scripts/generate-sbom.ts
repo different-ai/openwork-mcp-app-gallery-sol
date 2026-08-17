@@ -19,7 +19,7 @@ const components = Object.keys(lock.packages ?? {})
         type: "library",
         name,
         version,
-        purl: `pkg:npm/${name.replace("/", "%2F")}@${version}`,
+        purl: `pkg:npm/${encodeURIComponent(name)}@${version}`,
       },
     ];
   })
