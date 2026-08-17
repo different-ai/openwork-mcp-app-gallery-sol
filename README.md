@@ -4,6 +4,23 @@ An independently hosted, request-bounded adaptation of six official [MCP Apps](h
 
 This repository and service are independent learning infrastructure. They are not an official Model Context Protocol project or service, have no SLA, and do not accept accounts, uploads, credentials, or durable user data.
 
+## Try the hosted gallery
+
+The verified production gallery is [openwork-mcp-app-gallery-sol.vercel.app](https://openwork-mcp-app-gallery-sol.vercel.app). Add any one of these Streamable HTTP URLs to an MCP Apps-compatible host:
+
+| App                   | Production MCP URL                                                               | Sample prompt                                                           |
+| --------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Get Time              | `https://openwork-mcp-app-gallery-sol.vercel.app/apps/get-time/mcp`              | “Show me the current server time in an interactive app.”                |
+| Budget Allocator      | `https://openwork-mcp-app-gallery-sol.vercel.app/apps/budget-allocator/mcp`      | “Open an interactive budget allocator.”                                 |
+| Cohort Heatmap        | `https://openwork-mcp-app-gallery-sol.vercel.app/apps/cohort-heatmap/mcp`        | “Show me an interactive customer-retention cohort heatmap.”             |
+| Customer Segmentation | `https://openwork-mcp-app-gallery-sol.vercel.app/apps/customer-segmentation/mcp` | “Explore the synthetic customers in an interactive segmentation chart.” |
+| Scenario Modeler      | `https://openwork-mcp-app-gallery-sol.vercel.app/apps/scenario-modeler/mcp`      | “Model a synthetic growth scenario interactively.”                      |
+| Transcript            | `https://openwork-mcp-app-gallery-sol.vercel.app/apps/transcript/mcp`            | “Open the local-browser transcript interface.”                          |
+
+In a host that supports MCP tools but not MCP Apps, the same endpoints still return ordinary text and structured tool results; only the embedded interactive resource is omitted. Each URL exposes exactly one app, so connect multiple URLs when you want multiple examples. The copied endpoint needs no account, token, or custom header.
+
+The service intentionally has no SLA. Inputs are bounded and synthetic. The Transcript app keeps microphone audio in the browser and does not upload it to this server. See [Limits and failure behavior](#limits-and-failure-behavior) and [Diagnostics and safe observability](#diagnostics-and-safe-observability) before using the gallery in a shared or automated environment.
+
 ## Gallery catalog
 
 | App                   | Remote MCP path                   | Tool                | Interactive behavior                              | Data boundary                                    |
