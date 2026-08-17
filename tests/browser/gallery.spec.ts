@@ -3,6 +3,9 @@ import { expect, test } from "@playwright/test";
 const galleryOrigin = new URL(
   process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:4173",
 ).origin;
+const expectedPublicOrigin = new URL(
+  process.env.GALLERY_EXPECTED_PUBLIC_ORIGIN ?? galleryOrigin,
+).origin;
 
 test("the public gallery renders six accessible, copyable cards", async ({
   page,
@@ -21,7 +24,7 @@ test("the public gallery renders six accessible, copyable cards", async ({
   for (const endpoint of await page.locator(".endpoint").all())
     await expect(endpoint).toContainText(
       new RegExp(
-        `^${galleryOrigin.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}/apps/[a-z0-9-]+/mcp$`,
+        `^${expectedPublicOrigin.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}/apps/[a-z0-9-]+/mcp$`,
         "u",
       ),
     );
@@ -31,7 +34,7 @@ test("the public gallery renders six accessible, copyable cards", async ({
   await expect(firstButton).toHaveText("Copied");
   await expect(cards.first().getByRole("status")).toHaveText("MCP URL copied.");
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(
-    `${galleryOrigin}/apps/get-time/mcp`,
+    `${expectedPublicOrigin}/apps/get-time/mcp`,
   );
 });
 
@@ -73,6 +76,8 @@ test("apps.json reflects enabled public state with deliberate revalidation", asy
   const body = (await response.json()) as { apps: { endpoint: string }[] };
   expect(body.apps).toHaveLength(6);
   expect(
-    body.apps.every((app) => app.endpoint.startsWith(`${galleryOrigin}/apps/`)),
+    body.apps.every((app) =>
+      app.endpoint.startsWith(`${expectedPublicOrigin}/apps/`),
+    ),
   ).toBe(true);
 });

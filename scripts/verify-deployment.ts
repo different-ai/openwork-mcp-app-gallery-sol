@@ -15,6 +15,8 @@ type ProtocolMode = "current" | "legacy";
 const deploymentId = process.env.DEPLOYMENT_ID ?? "unlabeled";
 const expectedGitSha = process.env.EXPECTED_GIT_SHA ?? "";
 const deploymentValue = process.env.DEPLOYMENT_URL ?? "";
+const expectedManifestValue =
+  process.env.EXPECTED_MANIFEST_ORIGIN ?? deploymentValue;
 const protectionBypass = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
 
 function assert(condition: unknown, message: string): asserts condition {
@@ -38,6 +40,7 @@ assert(
   "EXPECTED_GIT_SHA must be a full commit SHA",
 );
 const origin = deploymentOrigin(deploymentValue);
+const expectedManifestOrigin = deploymentOrigin(expectedManifestValue);
 
 function target(pathname: string): URL {
   return new URL(pathname, origin);
@@ -168,7 +171,8 @@ async function verifyPublicSurface(): Promise<void> {
     );
     assert(entry, `apps.json is missing ${definition.slug}`);
     assert(
-      entry.endpoint === target(`/apps/${definition.slug}/mcp`).href,
+      entry.endpoint ===
+        new URL(`/apps/${definition.slug}/mcp`, expectedManifestOrigin).href,
       `apps.json has the wrong ${definition.slug} endpoint`,
     );
   }

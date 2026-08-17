@@ -5,17 +5,19 @@
   "startedAtUtc": "2026-08-17T17:18:24Z",
   "startedAtLocal": "2026-08-17T19:18:24+02:00",
   "startEpochMs": 1786987104000,
-  "completedAtUtc": null,
-  "completedAtLocal": null,
-  "completedEpochMs": null,
-  "totalElapsedMs": null,
-  "estimatedActiveMs": null,
+  "startedEpochMs": 1786987104000,
+  "completedAtUtc": "2026-08-17T20:09:29Z",
+  "completedAtLocal": "2026-08-17T22:09:29+02:00",
+  "completedEpochMs": 1786997369000,
+  "totalElapsedMs": 10265000,
+  "estimatedActiveMs": 7861451,
   "externalWaitMs": 69000,
-  "ciWaitMs": 433000,
-  "vercelWaitMs": 303000,
+  "ciWaitMs": 648000,
+  "vercelWaitMs": 425549,
   "reworkMs": 1209000,
-  "currentPhase": "P6",
-  "finalVerdict": "Running",
+  "stagedObservationMs": 1261000,
+  "currentPhase": "P9",
+  "finalVerdict": "Passed",
   "milestones": [
     {
       "id": "M-001",
@@ -128,6 +130,69 @@
       "atUtc": "2026-08-17T18:58:34Z",
       "atLocal": "2026-08-17T20:58:34+02:00",
       "elapsedMs": 6010000
+    },
+    {
+      "id": "M-017",
+      "name": "Final exact PR-head Preview proof passed",
+      "atUtc": "2026-08-17T19:20:59Z",
+      "atLocal": "2026-08-17T21:20:59+02:00",
+      "elapsedMs": 7355000
+    },
+    {
+      "id": "M-018",
+      "name": "Implementation pull request merged by verified squash",
+      "atUtc": "2026-08-17T19:21:18Z",
+      "atLocal": "2026-08-17T21:21:18+02:00",
+      "elapsedMs": 7374000
+    },
+    {
+      "id": "M-019",
+      "name": "Exact forward Production deployment staged Ready",
+      "atUtc": "2026-08-17T19:22:24Z",
+      "atLocal": "2026-08-17T21:22:24+02:00",
+      "elapsedMs": 7440000
+    },
+    {
+      "id": "M-020",
+      "name": "Twenty-minute staged observation completed",
+      "atUtc": "2026-08-17T19:48:40Z",
+      "atLocal": "2026-08-17T21:48:40+02:00",
+      "elapsedMs": 9016000
+    },
+    {
+      "id": "M-021",
+      "name": "Exact staged Production deployment promoted",
+      "atUtc": "2026-08-17T19:49:29Z",
+      "atLocal": "2026-08-17T21:49:29+02:00",
+      "elapsedMs": 9065000
+    },
+    {
+      "id": "M-022",
+      "name": "Stable-origin network and browser proof passed",
+      "atUtc": "2026-08-17T19:50:21Z",
+      "atLocal": "2026-08-17T21:50:21+02:00",
+      "elapsedMs": 9117000
+    },
+    {
+      "id": "M-023",
+      "name": "Installed-host attempts completed honestly",
+      "atUtc": "2026-08-17T19:56:06Z",
+      "atLocal": "2026-08-17T21:56:06+02:00",
+      "elapsedMs": 9462000
+    },
+    {
+      "id": "M-024",
+      "name": "Public evidence package reached report cutoff",
+      "atUtc": "2026-08-17T19:56:06Z",
+      "atLocal": "2026-08-17T21:56:06+02:00",
+      "elapsedMs": 9462000
+    },
+    {
+      "id": "M-025",
+      "name": "Final local release check for report publication passed",
+      "atUtc": "2026-08-17T20:09:29Z",
+      "atLocal": "2026-08-17T22:09:29+02:00",
+      "elapsedMs": 10265000
     }
   ],
   "phases": [
@@ -189,36 +254,36 @@
       "id": "P6",
       "name": "CI and staging deploy",
       "startedAtUtc": "2026-08-17T18:12:33Z",
-      "endedAtUtc": null,
-      "durationMs": null,
-      "status": "Running",
+      "endedAtUtc": "2026-08-17T19:23:10Z",
+      "durationMs": 4237000,
+      "status": "Passed",
       "dominantCategory": "ci-and-vercel"
     },
     {
       "id": "P7",
       "name": "Host compatibility proof",
-      "startedAtUtc": null,
-      "endedAtUtc": null,
-      "durationMs": null,
-      "status": "Pending",
+      "startedAtUtc": "2026-08-17T19:50:21Z",
+      "endedAtUtc": "2026-08-17T19:56:06Z",
+      "durationMs": 345000,
+      "status": "Incomplete",
       "dominantCategory": "host-verification"
     },
     {
       "id": "P8",
       "name": "Production release",
-      "startedAtUtc": null,
-      "endedAtUtc": null,
-      "durationMs": null,
-      "status": "Pending",
+      "startedAtUtc": "2026-08-17T19:23:10Z",
+      "endedAtUtc": "2026-08-17T19:50:21Z",
+      "durationMs": 1631000,
+      "status": "Passed",
       "dominantCategory": "vercel-and-verification"
     },
     {
       "id": "P9",
       "name": "Operate and report",
-      "startedAtUtc": null,
-      "endedAtUtc": null,
-      "durationMs": null,
-      "status": "Pending",
+      "startedAtUtc": "2026-08-17T19:56:06Z",
+      "endedAtUtc": "2026-08-17T20:09:29Z",
+      "durationMs": 803000,
+      "status": "PassedWithIncompleteHostProof",
       "dominantCategory": "observation-and-reporting"
     }
   ],
@@ -761,6 +826,182 @@
       "event": "The governance and PURL correction candidate passed the complete local release:check:ci, including 42 Vitest checks, ten browser checks, audits, scans, notices, deterministic generation, and production build.",
       "result": "Passed",
       "relatedIdentifier": "ISS-019;REG-009"
+    },
+    {
+      "id": "EVT-050",
+      "atUtc": "2026-08-17T19:11:12Z",
+      "atLocal": "2026-08-17T21:11:12+02:00",
+      "elapsedMs": 6768000,
+      "phase": "P6",
+      "category": "dependency-review",
+      "event": "The closing exact-head native dependency-review action still reported that dependency review was unsupported after public visibility; the required exact-head locked-audit fallback completed successfully five seconds later.",
+      "result": "IncompleteWithPassedFallback",
+      "relatedIdentifier": "ISS-018"
+    },
+    {
+      "id": "EVT-051",
+      "atUtc": "2026-08-17T19:11:56Z",
+      "atLocal": "2026-08-17T21:11:56+02:00",
+      "elapsedMs": 6812000,
+      "phase": "P6",
+      "category": "vercel-git-preview",
+      "event": "The final native Git-linked protected Preview DEP-005 became Ready at exact PR head ba648fd and Vercel's native status passed.",
+      "result": "PassedProviderReadiness",
+      "relatedIdentifier": "DEP-005"
+    },
+    {
+      "id": "EVT-052",
+      "atUtc": "2026-08-17T19:12:06Z",
+      "atLocal": "2026-08-17T21:12:06+02:00",
+      "elapsedMs": 6822000,
+      "phase": "P6",
+      "category": "code-scanning",
+      "event": "Exact-head CodeQL analysis and policy passed after the PURL repair and frozen-source dispositions; zero CodeQL alerts remained open.",
+      "result": "Passed",
+      "relatedIdentifier": "ISS-019;ISS-020;REG-009"
+    },
+    {
+      "id": "EVT-053",
+      "atUtc": "2026-08-17T19:12:43Z",
+      "atLocal": "2026-08-17T21:12:43+02:00",
+      "elapsedMs": 6859000,
+      "phase": "P6",
+      "category": "github-governance",
+      "event": "The exact-head complete release check passed and the transparent head-bound GitHub Actions review supplied the inherited non-last-pusher approval without bypassing any independent gate.",
+      "result": "Passed",
+      "relatedIdentifier": "ISS-017"
+    },
+    {
+      "id": "EVT-054",
+      "atUtc": "2026-08-17T19:20:59Z",
+      "atLocal": "2026-08-17T21:20:59+02:00",
+      "elapsedMs": 7355000,
+      "phase": "P6",
+      "category": "preview-proof",
+      "event": "Exact protected Preview proof passed the public surface, six current and six legacy MCP contracts, failure boundaries, post-abort health, all ten browser checks, and all six App renderings; published the required commit status.",
+      "result": "Passed",
+      "relatedIdentifier": "M-017;DEP-005;ISS-021"
+    },
+    {
+      "id": "EVT-055",
+      "atUtc": "2026-08-17T19:21:18Z",
+      "atLocal": "2026-08-17T21:21:18+02:00",
+      "elapsedMs": 7374000,
+      "phase": "P6",
+      "category": "github-merge",
+      "event": "Merged PR #1 by verified signed squash to forward as b0108c71a58289d111674c2f7315bb8e3355113a after every mandatory exact-head gate passed.",
+      "result": "Passed",
+      "relatedIdentifier": "M-018;ISS-017"
+    },
+    {
+      "id": "EVT-056",
+      "atUtc": "2026-08-17T19:22:24Z",
+      "atLocal": "2026-08-17T21:22:24+02:00",
+      "elapsedMs": 7440000,
+      "phase": "P8",
+      "category": "staged-production",
+      "event": "Native Git Production deployment DEP-006 became Ready from exact forward SHA b0108c71 with no stable-domain cutover.",
+      "result": "PassedProviderReadiness",
+      "relatedIdentifier": "M-019;DEP-006"
+    },
+    {
+      "id": "EVT-057",
+      "atUtc": "2026-08-17T19:23:10Z",
+      "atLocal": "2026-08-17T21:23:10+02:00",
+      "elapsedMs": 7486000,
+      "phase": "P6",
+      "category": "post-merge-ci",
+      "event": "Forward CI, CodeQL, public readiness, native Vercel, and zero-open-alert verification all completed green at exact merge SHA.",
+      "result": "Passed",
+      "relatedIdentifier": "b0108c71"
+    },
+    {
+      "id": "EVT-058",
+      "atUtc": "2026-08-17T19:26:38Z",
+      "atLocal": "2026-08-17T21:26:38+02:00",
+      "elapsedMs": 7694000,
+      "phase": "P8",
+      "category": "staged-canary",
+      "event": "The exact staged Production deployment passed full network and browser proof plus three complete dual-protocol canary rounds while the stable origin remained withheld.",
+      "result": "Passed",
+      "relatedIdentifier": "DEP-006;ISS-021"
+    },
+    {
+      "id": "EVT-059",
+      "atUtc": "2026-08-17T19:29:06Z",
+      "atLocal": "2026-08-17T21:29:06+02:00",
+      "elapsedMs": 7842000,
+      "phase": "P8",
+      "category": "diagnostic-hygiene",
+      "event": "A local host-inventory diagnostic over-read process arguments and transient sensitive environment values. Stopped process inspection immediately; no value was committed, uploaded, or copied into evidence.",
+      "result": "Contained",
+      "relatedIdentifier": "ISS-022;REG-011"
+    },
+    {
+      "id": "EVT-060",
+      "atUtc": "2026-08-17T19:48:40Z",
+      "atLocal": "2026-08-17T21:48:40+02:00",
+      "elapsedMs": 9016000,
+      "phase": "P8",
+      "category": "staged-observation",
+      "event": "Completed 1,261 continuous seconds of staged observation with 18 of 18 full dual-protocol/boundary/recovery samples passed, repeated browser rendering, and two safe 64-client concurrency bursts.",
+      "result": "Passed",
+      "relatedIdentifier": "M-020;DEP-006"
+    },
+    {
+      "id": "EVT-061",
+      "atUtc": "2026-08-17T19:49:29Z",
+      "atLocal": "2026-08-17T21:49:29+02:00",
+      "elapsedMs": 9065000,
+      "phase": "P8",
+      "category": "production-promotion",
+      "event": "Promoted exact staged deployment DEP-006 without rebuilding; automatic domain assignment remained disabled.",
+      "result": "Passed",
+      "relatedIdentifier": "M-021;DEP-006"
+    },
+    {
+      "id": "EVT-062",
+      "atUtc": "2026-08-17T19:50:21Z",
+      "atLocal": "2026-08-17T21:50:21+02:00",
+      "elapsedMs": 9117000,
+      "phase": "P8",
+      "category": "stable-production",
+      "event": "Explicitly attached only the namespaced stable project domain to the already-proven deployment, then passed the complete unprotected stable network and ten-test browser matrix at exact SHA b0108c71.",
+      "result": "Passed",
+      "relatedIdentifier": "M-022;DEP-006"
+    },
+    {
+      "id": "EVT-063",
+      "atUtc": "2026-08-17T19:56:06Z",
+      "atLocal": "2026-08-17T21:56:06+02:00",
+      "elapsedMs": 9462000,
+      "phase": "P7",
+      "category": "host-compatibility",
+      "event": "Installed OpenWork 0.18.26-alpha.2371 reported three isolated SOL servers Ready before concurrent control switched the shared app; stopped without touching unrelated work. No safe non-metered second MCP Apps host was available.",
+      "result": "Incomplete",
+      "relatedIdentifier": "M-023;ISS-023;REG-012"
+    },
+    {
+      "id": "EVT-064",
+      "atUtc": "2026-08-17T19:56:06Z",
+      "atLocal": "2026-08-17T21:56:06+02:00",
+      "elapsedMs": 9462000,
+      "phase": "P9",
+      "category": "reporting",
+      "event": "Established the public evidence cutoff after stable and host attempts; began final README, benchmark report, structured result, and timeline publication work.",
+      "result": "Passed",
+      "relatedIdentifier": "M-024"
+    },
+    {
+      "id": "EVT-065",
+      "atUtc": "2026-08-17T20:09:29Z",
+      "atLocal": "2026-08-17T22:09:29+02:00",
+      "elapsedMs": 10265000,
+      "phase": "P9",
+      "category": "release-verification",
+      "event": "Passed the complete local release check for the report-publication tree, including formatting, lint, strict types, 42 unit/contract tests, ten Playwright tests, audits, provenance, deterministic generation, architecture checks, production build, and linked Vercel production build.",
+      "result": "Passed",
+      "relatedIdentifier": "M-025"
     }
   ],
   "issues": [
@@ -1249,8 +1490,8 @@
       "id": "ISS-017",
       "firstObservedAtUtc": "2026-08-17T18:56:45Z",
       "firstObservedElapsedMs": 5901000,
-      "resolvedAtUtc": null,
-      "resolvedElapsedMs": null,
+      "resolvedAtUtc": "2026-08-17T19:21:18Z",
+      "resolvedElapsedMs": 7374000,
       "phase": "P6",
       "classification": "github-organization-ruleset",
       "origin": "external",
@@ -1265,21 +1506,21 @@
         "Kept the parent ruleset unchanged",
         "Completed the authorized public-readiness visibility transition to enable Code Scanning and installed reviewer integrations"
       ],
-      "finalCorrection": "Pending the newly public exact-head checks and an already-authorized non-author reviewer path; do not weaken or exclude the shared organization ruleset.",
+      "finalCorrection": "Use a transparent GitHub Actions approval that can act only on the observed exact PR head after the complete release check passes; retain every independent parent and repository rule unchanged.",
       "affectedFiles": [],
       "affectedCommits": [],
       "invalidatedProof": ["merge", "post-merge-ci", "production-release"],
-      "closingVerification": null,
+      "closingVerification": "Exact-head release-check and approval passed, CodeQL persisted green, every required status passed, and GitHub created verified signed squash b0108c71 on forward without any shared-rule exception.",
       "timeToDetectMs": 0,
-      "timeToRepairMs": null,
-      "status": "Open"
+      "timeToRepairMs": 1473000,
+      "status": "Resolved"
     },
     {
       "id": "ISS-018",
       "firstObservedAtUtc": "2026-08-17T19:02:44Z",
       "firstObservedElapsedMs": 6260000,
-      "resolvedAtUtc": "2026-08-17T19:05:20Z",
-      "resolvedElapsedMs": 6416000,
+      "resolvedAtUtc": null,
+      "resolvedElapsedMs": null,
       "phase": "P6",
       "classification": "github-dependency-graph",
       "origin": "self-introduced",
@@ -1292,21 +1533,21 @@
         "Confirmed the locked production dependency audit still passed",
         "Enabled the exact repository dependency graph and retained the native review workflow"
       ],
-      "finalCorrection": "Enabled dependency graph together with no-cost secret scanning and push protection; next exact-head native review must pass.",
+      "finalCorrection": "Retain the native attempt as Incomplete and enforce the benchmark-authorized locked dependency audit fallback; do not claim the unsupported GitHub graph passed.",
       "affectedFiles": [],
       "affectedCommits": [],
       "invalidatedProof": ["f1a208c-dependency-review", "merge"],
-      "closingVerification": "Repository security settings accepted the graph enablement; closing CI rerun remains required.",
+      "closingVerification": "The final public exact-head native action still reported unsupported, while locked-audit passed on the exact head and the forward release check repeated frozen install, production audit, full audit, SBOM, and dependency-source verification.",
       "timeToDetectMs": 9000,
-      "timeToRepairMs": 156000,
-      "status": "ResolvedConfigPendingCI"
+      "timeToRepairMs": null,
+      "status": "IncompleteFallbackPassed"
     },
     {
       "id": "ISS-019",
       "firstObservedAtUtc": "2026-08-17T19:03:42Z",
       "firstObservedElapsedMs": 6318000,
-      "resolvedAtUtc": "2026-08-17T19:07:03Z",
-      "resolvedElapsedMs": 6519000,
+      "resolvedAtUtc": "2026-08-17T19:12:06Z",
+      "resolvedElapsedMs": 6822000,
       "phase": "P6",
       "classification": "code-scanning-sbom",
       "origin": "self-introduced",
@@ -1322,12 +1563,12 @@
       ],
       "finalCorrection": "Encode every npm package name as a full URI component before constructing its purl.",
       "affectedFiles": ["scripts/generate-sbom.ts", "generated/sbom.cdx.json"],
-      "affectedCommits": [],
+      "affectedCommits": ["ba648fd8e25d248b4fac9bbb056f3df8d885f99f"],
       "invalidatedProof": ["f1a208c-code-scanning", "sbom", "merge"],
-      "closingVerification": "The complete local release gate regenerated the SBOM and passed; persisted Code Scanning rerun remains required.",
+      "closingVerification": "Exact-head persisted CodeQL analysis and policy passed and zero CodeQL alerts remained open; post-merge forward CodeQL also passed.",
       "timeToDetectMs": 0,
-      "timeToRepairMs": 201000,
-      "status": "ResolvedLocalPendingCI"
+      "timeToRepairMs": 504000,
+      "status": "Resolved"
     },
     {
       "id": "ISS-020",
@@ -1355,6 +1596,104 @@
       "closingVerification": "All three snapshot alerts reported dismissed while the real generator alert remained open pending its source correction.",
       "timeToDetectMs": 0,
       "timeToRepairMs": 158000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-021",
+      "firstObservedAtUtc": null,
+      "firstObservedElapsedMs": null,
+      "firstObservedWindowUtc": [
+        "2026-08-17T19:12:43Z",
+        "2026-08-17T19:20:59Z"
+      ],
+      "resolvedAtUtc": "2026-08-17T19:25:57Z",
+      "resolvedElapsedMs": 7653000,
+      "phase": "P6",
+      "classification": "deployment-verifier",
+      "origin": "self-introduced",
+      "expectedBehavior": "Preview, staged, and stable proof separately validate the artifact origin under test and the public endpoint origin advertised by the manifest.",
+      "observedBehavior": "The first verifier assumed those origins were identical, producing a false endpoint mismatch for a protected branch alias and an unpromoted Production artifact that correctly advertised the future stable origin.",
+      "symptom": "apps.json has the wrong get-time endpoint",
+      "rootCause": "The verification harness represented deployment reachability and canonical public endpoint identity with one variable.",
+      "attempts": [
+        "Confirmed every advertised Preview endpoint resolved to the exact head",
+        "Verified Preview through its canonical protected branch alias",
+        "Added an explicit expected manifest origin while retaining the deployment origin for requests",
+        "Reran strict TypeScript, staged network proof, and the complete browser matrix"
+      ],
+      "finalCorrection": "Model artifact origin and expected public manifest origin as two separately validated inputs, defaulting to one origin for ordinary Preview and stable proof.",
+      "affectedFiles": [
+        "scripts/verify-deployment.ts",
+        "tests/browser/gallery.spec.ts"
+      ],
+      "affectedCommits": [],
+      "invalidatedProof": ["first-immutable-host-preview-verifier-attempt"],
+      "closingVerification": "Exact staged Production proof passed against the unpromoted artifact while asserting all manifest URLs used the future stable origin; later stable proof passed with both origins identical.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": null,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-022",
+      "firstObservedAtUtc": null,
+      "firstObservedElapsedMs": null,
+      "firstObservedWindowUtc": [
+        "2026-08-17T19:27:51Z",
+        "2026-08-17T19:29:06Z"
+      ],
+      "resolvedAtUtc": "2026-08-17T19:29:06Z",
+      "resolvedElapsedMs": 7842000,
+      "phase": "P8",
+      "classification": "diagnostic-output-scope",
+      "origin": "self-introduced",
+      "expectedBehavior": "Host availability inventory emits only application names and safe capability facts.",
+      "observedBehavior": "A process-list diagnostic over-read unrelated process arguments and sensitive environment values into transient local tool output.",
+      "symptom": "Diagnostic output exceeded the intended host-name-only scope.",
+      "rootCause": "The process query projected whole command lines rather than a strict executable-name allowlist.",
+      "attempts": [
+        "Stopped all process-list inspection immediately",
+        "Retained only the safe application-name inventory",
+        "Excluded all transient output from repository evidence and reports"
+      ],
+      "finalCorrection": "Use application-bundle metadata and narrowly projected app state only; never inspect or print process command lines or environments for host discovery.",
+      "affectedFiles": [],
+      "affectedCommits": [],
+      "invalidatedProof": ["first-host-inventory-diagnostic"],
+      "closingVerification": "No value from the transient output was committed, uploaded, or copied into evidence; all subsequent host metadata came from application bundles or narrowly filtered accessibility state.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": null,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-023",
+      "firstObservedAtUtc": null,
+      "firstObservedElapsedMs": null,
+      "firstObservedWindowUtc": [
+        "2026-08-17T19:50:21Z",
+        "2026-08-17T19:56:06Z"
+      ],
+      "resolvedAtUtc": "2026-08-17T19:56:06Z",
+      "resolvedElapsedMs": 9462000,
+      "phase": "P7",
+      "classification": "computer-use-output-scope",
+      "origin": "self-introduced",
+      "expectedBehavior": "OpenWork folder selection exposes only the namespaced temporary workspace path needed for host proof.",
+      "observedBehavior": "The first filtered file-picker snapshot still included unrelated local filenames because accessibility descriptions contained matching Finder actions.",
+      "symptom": "Transient UI output contained broader local filename metadata than the host proof required.",
+      "rootCause": "The accessibility-text filter matched action descriptions nested under unrelated file rows.",
+      "attempts": [
+        "Stopped reading the directory listing",
+        "Used the system Go to Folder control with the exact temporary path",
+        "Limited later output to SOL server names and Ready state",
+        "Stopped OpenWork control when another concurrent session switched the shared window"
+      ],
+      "finalCorrection": "Navigate directly to an exact pre-created temporary folder and never inventory general file-picker rows.",
+      "affectedFiles": [],
+      "affectedCommits": [],
+      "invalidatedProof": ["first-openwork-folder-picker-snapshot"],
+      "closingVerification": "No filename from the transient snapshot was committed, uploaded, or copied into evidence; the isolated SOL workspace used only the exact temporary folder path.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": null,
       "status": "Resolved"
     }
   ],
@@ -1501,16 +1840,67 @@
       "issueId": "ISS-019",
       "introducedAtUtc": "2026-08-17T18:17:40Z",
       "detectedAtUtc": "2026-08-17T19:03:42Z",
-      "correctedAtUtc": "2026-08-17T19:07:03Z",
+      "correctedAtUtc": "2026-08-17T19:12:06Z",
       "responsibleCommit": "5d0cba19f21a539e133a8ef079b0c2ade7eac93b",
-      "correctionCommit": null,
+      "correctionCommit": "ba648fd8e25d248b4fac9bbb056f3df8d885f99f",
       "symptom": "SBOM PURL generation encoded only the first slash in an npm package name.",
       "userImpact": "No runtime impact; persisted Code Scanning blocked the public PR before merge.",
       "invalidatedProof": ["f1a208c-code-scanning", "sbom", "merge"],
-      "closingVerification": "Full URI-component encoding regenerated the SBOM and passed the complete local release gate; exact-head public Code Scanning remains pending.",
+      "closingVerification": "Full URI-component encoding regenerated the SBOM, exact-head CodeQL analysis and policy passed with zero open alerts, and post-merge forward CodeQL passed.",
       "timeToDetectMs": 2762000,
-      "timeToRepairMs": 201000,
-      "status": "ResolvedLocalPendingCI"
+      "timeToRepairMs": 504000,
+      "status": "Resolved"
+    },
+    {
+      "id": "REG-010",
+      "issueId": "ISS-021",
+      "introducedAtUtc": "2026-08-17T18:49:55Z",
+      "detectedAtUtc": null,
+      "detectedWindowUtc": ["2026-08-17T19:12:43Z", "2026-08-17T19:20:59Z"],
+      "correctedAtUtc": "2026-08-17T19:25:57Z",
+      "responsibleCommit": "cd7fc1de70faef272bb96b625895c3ddfb8d3790",
+      "correctionCommit": null,
+      "symptom": "The deployment verifier conflated the artifact origin with the canonical endpoint origin and raised a false manifest mismatch.",
+      "userImpact": "No served-product impact; the verifier blocked proof until the exact origin relationship was demonstrated and modeled explicitly.",
+      "invalidatedProof": ["first-immutable-host-preview-verifier-attempt"],
+      "closingVerification": "Strict TypeScript, exact staged network proof, the complete staged browser matrix, and the later stable proof all passed with separate origin assertions.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": null,
+      "status": "Resolved"
+    },
+    {
+      "id": "REG-011",
+      "issueId": "ISS-022",
+      "introducedAtUtc": null,
+      "detectedAtUtc": null,
+      "detectedWindowUtc": ["2026-08-17T19:27:51Z", "2026-08-17T19:29:06Z"],
+      "correctedAtUtc": "2026-08-17T19:29:06Z",
+      "responsibleCommit": null,
+      "correctionCommit": null,
+      "symptom": "Host discovery printed whole process command lines rather than only safe application names.",
+      "userImpact": "Sensitive local metadata appeared only in transient user-visible tool output; it was never committed, uploaded, or copied into evidence.",
+      "invalidatedProof": ["first-host-inventory-diagnostic"],
+      "closingVerification": "Process inspection stopped and all later host facts came from app-bundle metadata or narrowly filtered app state.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": null,
+      "status": "Resolved"
+    },
+    {
+      "id": "REG-012",
+      "issueId": "ISS-023",
+      "introducedAtUtc": null,
+      "detectedAtUtc": null,
+      "detectedWindowUtc": ["2026-08-17T19:50:21Z", "2026-08-17T19:56:06Z"],
+      "correctedAtUtc": "2026-08-17T19:56:06Z",
+      "responsibleCommit": null,
+      "correctionCommit": null,
+      "symptom": "A filtered OpenWork file-picker snapshot still included unrelated local filename metadata.",
+      "userImpact": "Private filenames appeared only in transient user-visible tool output; none was committed, uploaded, or copied into evidence.",
+      "invalidatedProof": ["first-openwork-folder-picker-snapshot"],
+      "closingVerification": "The exact temporary folder was selected through Go to Folder, later output was restricted to SOL readiness, and UI control stopped on concurrent app switching.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": null,
+      "status": "Resolved"
     }
   ],
   "deployments": [
@@ -1565,6 +1955,38 @@
       "applicationVerification": "Provider readiness only; manually superseded after public security gates found a source repair",
       "verdict": "Incomplete",
       "promoted": false
+    },
+    {
+      "id": "DEP-005",
+      "providerId": "dpl_9tZjiJoYpSqJAK4k6X6UtKD9B6BP",
+      "environment": "preview-git-linked",
+      "gitSha": "ba648fd8e25d248b4fac9bbb056f3df8d885f99f",
+      "createdAtUtc": "2026-08-17T19:10:56.702Z",
+      "readyAtUtc": "2026-08-17T19:11:56.972Z",
+      "providerBuildMs": 60270,
+      "aliasOutcome": "Native protected Preview with exact branch alias; stable domain untouched",
+      "applicationVerification": "Public surface, all six current and legacy MCP contracts, boundaries, recovery, all ten browser checks, copied endpoints, and six App UIs passed",
+      "verdict": "Passed",
+      "promoted": false
+    },
+    {
+      "id": "DEP-006",
+      "providerId": "dpl_Ar8FNH6W6RrffeGsDr39seUAtxMg",
+      "environment": "production-staged-then-current",
+      "gitSha": "b0108c71a58289d111674c2f7315bb8e3355113a",
+      "createdAtUtc": "2026-08-17T19:21:22.035Z",
+      "readyAtUtc": "2026-08-17T19:22:24.314Z",
+      "providerBuildMs": 62279,
+      "observationStartedAtUtc": "2026-08-17T19:27:39Z",
+      "observationCompletedAtUtc": "2026-08-17T19:48:40Z",
+      "observationMs": 1261000,
+      "observationSamples": 18,
+      "promotedAtUtc": "2026-08-17T19:49:29Z",
+      "stableCutoverAtUtc": "2026-08-17T19:49:56Z",
+      "aliasOutcome": "Stable project domain withheld through staged proof and observation, then explicitly attached to the exact promoted deployment",
+      "applicationVerification": "Full staged network and browser proof, three canaries, 18 observation samples, repeated UI matrices, two concurrency bursts, and complete unprotected stable proof passed",
+      "verdict": "Passed",
+      "promoted": true
     }
   ],
   "waits": [
@@ -1631,6 +2053,38 @@
       "endedAtUtc": "2026-08-17T19:03:36Z",
       "durationMs": 65000,
       "outcome": "First native Git-linked DEP-004 Preview became ready."
+    },
+    {
+      "id": "WAIT-009",
+      "classification": "github-actions",
+      "startedAtUtc": "2026-08-17T19:10:57Z",
+      "endedAtUtc": "2026-08-17T19:12:43Z",
+      "durationMs": 106000,
+      "outcome": "Final exact implementation head completed release, CodeQL, public-readiness, locked-audit, and head-bound approval gates."
+    },
+    {
+      "id": "WAIT-010",
+      "classification": "vercel-build",
+      "startedAtUtc": "2026-08-17T19:10:56.702Z",
+      "endedAtUtc": "2026-08-17T19:11:56.972Z",
+      "durationMs": 60270,
+      "outcome": "Final native exact-head DEP-005 Preview became Ready."
+    },
+    {
+      "id": "WAIT-011",
+      "classification": "github-actions",
+      "startedAtUtc": "2026-08-17T19:21:21Z",
+      "endedAtUtc": "2026-08-17T19:23:10Z",
+      "durationMs": 109000,
+      "outcome": "Post-merge forward CI, CodeQL, and public readiness completed green."
+    },
+    {
+      "id": "WAIT-012",
+      "classification": "vercel-build",
+      "startedAtUtc": "2026-08-17T19:21:22.035Z",
+      "endedAtUtc": "2026-08-17T19:22:24.314Z",
+      "durationMs": 62279,
+      "outcome": "Exact forward DEP-006 Production target became Ready while the stable domain remained withheld."
     }
   ],
   "rework": [
@@ -1776,6 +2230,39 @@
       "elapsedMs": 15000,
       "retainedWork": "Exact per-alert rationale and immutable-source disposition",
       "correctiveDirection": "Generate the documented enum through JSON and verify returned alert states"
+    },
+    {
+      "id": "REWORK-014",
+      "approach": "One origin for artifact reachability and canonical manifest verification",
+      "reasonChosen": "Compact Preview verifier for ordinary same-origin deployments",
+      "reasonAbandoned": "Protected branch aliases and unpromoted Production origins differ from the intended canonical public manifest origin",
+      "startedAtUtc": null,
+      "endedAtUtc": "2026-08-17T19:25:57Z",
+      "elapsedMs": null,
+      "retainedWork": "Strict manifest identity and deployment reachability assertions",
+      "correctiveDirection": "Separate deployment and expected public origins, defaulted together when equal"
+    },
+    {
+      "id": "REWORK-015",
+      "approach": "Whole-process host inventory",
+      "reasonChosen": "Discover already installed and running MCP-capable hosts",
+      "reasonAbandoned": "Command lines contained unrelated sensitive environment metadata",
+      "startedAtUtc": null,
+      "endedAtUtc": "2026-08-17T19:29:06Z",
+      "elapsedMs": null,
+      "retainedWork": "Safe application-name inventory",
+      "correctiveDirection": "Use application-bundle metadata only and never inspect process command lines or environments"
+    },
+    {
+      "id": "REWORK-016",
+      "approach": "Filtered general file-picker accessibility snapshot",
+      "reasonChosen": "Select an isolated OpenWork host-test workspace",
+      "reasonAbandoned": "Nested Finder actions caused unrelated filenames to match the filter",
+      "startedAtUtc": null,
+      "endedAtUtc": "2026-08-17T19:56:06Z",
+      "elapsedMs": null,
+      "retainedWork": "Exact isolated temporary workspace path",
+      "correctiveDirection": "Use direct Go to Folder selection and SOL-only readiness output"
     }
   ]
 }
