@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "modelName": "SOL",
+  "modelNamespace": "sol",
+  "startedAtUtc": "2026-08-17T17:18:24Z",
+  "startedAtLocal": "2026-08-17T19:18:24+02:00",
+  "startEpochMs": 1786987104000,
+  "completedAtUtc": null,
+  "completedAtLocal": null,
+  "completedEpochMs": null,
+  "totalElapsedMs": null,
+  "estimatedActiveMs": null,
+  "externalWaitMs": 0,
+  "ciWaitMs": 0,
+  "vercelWaitMs": 0,
+  "reworkMs": 0,
+  "currentPhase": "P1",
+  "finalVerdict": "Running",
+  "milestones": [
+    {
+      "id": "M-001",
+      "name": "Benchmark clock started",
+      "atUtc": "2026-08-17T17:18:24Z",
+      "atLocal": "2026-08-17T19:18:24+02:00",
+      "elapsedMs": 0
+    },
+    {
+      "id": "M-002",
+      "name": "Preflight complete",
+      "atUtc": "2026-08-17T17:22:23Z",
+      "atLocal": "2026-08-17T19:22:23+02:00",
+      "elapsedMs": 239000
+    }
+  ],
+  "phases": [
+    { "id": "P0", "name": "Authority and source freeze", "startedAtUtc": "2026-08-17T17:18:24Z", "endedAtUtc": "2026-08-17T17:22:23Z", "durationMs": 239000, "status": "Passed", "dominantCategory": "research-and-preflight" },
+    { "id": "P1", "name": "Repository foundation", "startedAtUtc": "2026-08-17T17:22:23Z", "endedAtUtc": null, "durationMs": null, "status": "Running", "dominantCategory": "implementation" },
+    { "id": "P2", "name": "Two-app vertical", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "implementation" },
+    { "id": "P3", "name": "Six-app catalog", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "implementation" },
+    { "id": "P4", "name": "Gallery experience", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "implementation" },
+    { "id": "P5", "name": "Public-runtime hardening", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "implementation-and-verification" },
+    { "id": "P6", "name": "CI and staging deploy", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "ci-and-vercel" },
+    { "id": "P7", "name": "Host compatibility proof", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "host-verification" },
+    { "id": "P8", "name": "Production release", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "vercel-and-verification" },
+    { "id": "P9", "name": "Operate and report", "startedAtUtc": null, "endedAtUtc": null, "durationMs": null, "status": "Pending", "dominantCategory": "observation-and-reporting" }
+  ],
+  "events": [
+    {
+      "id": "EVT-001",
+      "atUtc": "2026-08-17T17:18:24Z",
+      "atLocal": "2026-08-17T19:18:24+02:00",
+      "elapsedMs": 0,
+      "phase": "P0",
+      "category": "benchmark",
+      "event": "Created the two required timeline files before repository or provider mutation.",
+      "result": "Passed",
+      "relatedIdentifier": "1786987104000"
+    },
+    {
+      "id": "EVT-002",
+      "atUtc": "2026-08-17T17:22:23Z",
+      "atLocal": "2026-08-17T19:22:23+02:00",
+      "elapsedMs": 239000,
+      "phase": "P0",
+      "category": "preflight",
+      "event": "Read the execution contract and source plan; refreshed Snacks forward; verified GitHub and Vercel authentication; checked only the SOL targets; froze official source, dependency, protocol, and licensing inputs.",
+      "result": "Passed",
+      "relatedIdentifier": "ext-apps@10195ad;mcp-handler@7c8fe0a"
+    }
+  ],
+  "issues": [],
+  "regressions": [],
+  "deployments": []
+}
