@@ -72,6 +72,13 @@
       "atUtc": "2026-08-17T18:12:33Z",
       "atLocal": "2026-08-17T20:12:33+02:00",
       "elapsedMs": 3249000
+    },
+    {
+      "id": "M-009",
+      "name": "Green local release candidate committed",
+      "atUtc": "2026-08-17T18:17:47Z",
+      "atLocal": "2026-08-17T20:17:47+02:00",
+      "elapsedMs": 3563000
     }
   ],
   "phases": [
@@ -408,6 +415,17 @@
       "event": "The first complete local release:check:ci passed: frozen install, formatting, lint, strict types, 42 Vitest checks, 10 Playwright checks, notices, provenance, architecture, full audit, source and secret scans, SBOM, deterministic resources, public gallery, and production-shaped build.",
       "result": "Passed",
       "relatedIdentifier": "M-008"
+    },
+    {
+      "id": "EVT-023",
+      "atUtc": "2026-08-17T18:17:47Z",
+      "atLocal": "2026-08-17T20:17:47+02:00",
+      "elapsedMs": 3563000,
+      "phase": "P6",
+      "category": "git",
+      "event": "Committed the coherent green implementation, generated artifacts, tests, security/provenance controls, and truthful running timeline on sol/gallery-v1.",
+      "result": "Passed",
+      "relatedIdentifier": "5d0cba19f21a539e133a8ef079b0c2ade7eac93b;M-009"
     }
   ],
   "issues": [
@@ -491,7 +509,7 @@
         "package.json",
         "pnpm-lock.yaml"
       ],
-      "affectedCommits": [],
+      "affectedCommits": ["5d0cba19f21a539e133a8ef079b0c2ade7eac93b"],
       "invalidatedProof": ["resource-size", "two-app-vertical"],
       "closingVerification": "All six resources passed: 335863, 354133, 337864, 348890, 339570, and 345103 bytes.",
       "timeToDetectMs": null,
@@ -523,7 +541,7 @@
         "src/gallery-render.ts",
         "src/mcp-app-adapter.ts"
       ],
-      "affectedCommits": [],
+      "affectedCommits": ["5d0cba19f21a539e133a8ef079b0c2ade7eac93b"],
       "invalidatedProof": ["typecheck", "two-app-vertical"],
       "closingVerification": "Strict tsc --noEmit passed with zero errors.",
       "timeToDetectMs": null,
@@ -554,7 +572,7 @@
         "test-support/ext-apps-app-bridge-runtime.js",
         "test-support/ext-apps-app-bridge-runtime.d.ts"
       ],
-      "affectedCommits": [],
+      "affectedCommits": ["5d0cba19f21a539e133a8ef079b0c2ade7eac93b"],
       "invalidatedProof": ["typecheck", "browser-host-build"],
       "closingVerification": "Strict tsc and the Vite browser-host build passed, followed by all six real-browser AppBridge initializations.",
       "timeToDetectMs": null,
@@ -586,7 +604,7 @@
         "tests/browser/gallery.spec.ts",
         "tests/browser/mcp-app-host.spec.ts"
       ],
-      "affectedCommits": [],
+      "affectedCommits": ["5d0cba19f21a539e133a8ef079b0c2ade7eac93b"],
       "invalidatedProof": [
         "browser-rendering",
         "copy-url",
@@ -619,7 +637,7 @@
       ],
       "finalCorrection": "Used the platform Headers API for union-safe composition and retained record spread only for a function that always returns a record.",
       "affectedFiles": ["src/gateway.ts", "tests/gateway/boundaries.test.ts"],
-      "affectedCommits": [],
+      "affectedCommits": ["5d0cba19f21a539e133a8ef079b0c2ade7eac93b"],
       "invalidatedProof": ["lint", "gateway-headers"],
       "closingVerification": "Lint, typecheck, 42 Vitest checks, and ten browser checks passed in the complete local release gate.",
       "timeToDetectMs": null,
@@ -646,7 +664,7 @@
       ],
       "finalCorrection": "Matched real lowercase Vercel/vcp credential prefixes while continuing to scan the same complete source set.",
       "affectedFiles": ["scripts/scan-secrets.ts"],
-      "affectedCommits": [],
+      "affectedCommits": ["5d0cba19f21a539e133a8ef079b0c2ade7eac93b"],
       "invalidatedProof": ["secret-scan", "public-readiness"],
       "closingVerification": "The scan passed 117 text files and remained part of the green complete release gate.",
       "timeToDetectMs": null,
@@ -678,7 +696,7 @@
         "pnpm-lock.yaml",
         "generated/sbom.cdx.json"
       ],
-      "affectedCommits": [],
+      "affectedCommits": ["5d0cba19f21a539e133a8ef079b0c2ade7eac93b"],
       "invalidatedProof": ["dependency-audit", "sbom", "release-check"],
       "closingVerification": "The complete audit returned no known vulnerabilities and the full release gate regenerated the SBOM.",
       "timeToDetectMs": null,
@@ -694,7 +712,7 @@
       "detectedAtUtc": "2026-08-17T17:43:15Z",
       "correctedAtUtc": "2026-08-17T17:49:18Z",
       "responsibleCommit": null,
-      "correctionCommit": null,
+      "correctionCommit": "5d0cba19f21a539e133a8ef079b0c2ade7eac93b",
       "symptom": "Get Time resource measured 539002 bytes.",
       "userImpact": "None; the fail-closed generator prevented publication or deployment.",
       "invalidatedProof": ["resource-size", "two-app-vertical"],
@@ -710,7 +728,7 @@
       "detectedAtUtc": "2026-08-17T17:50:13Z",
       "correctedAtUtc": "2026-08-17T17:51:10Z",
       "responsibleCommit": null,
-      "correctionCommit": null,
+      "correctionCommit": "5d0cba19f21a539e133a8ef079b0c2ade7eac93b",
       "symptom": "Strict typecheck failed before runtime testing.",
       "userImpact": "None; no candidate was committed, pushed, or deployed.",
       "invalidatedProof": ["typecheck", "two-app-vertical"],
@@ -726,7 +744,7 @@
       "detectedAtUtc": "2026-08-17T18:01:07Z",
       "correctedAtUtc": "2026-08-17T18:02:37Z",
       "responsibleCommit": null,
-      "correctionCommit": null,
+      "correctionCommit": "5d0cba19f21a539e133a8ef079b0c2ade7eac93b",
       "symptom": "Development CSS and JavaScript returned 404, breaking copy behavior and mobile layout in the first browser run.",
       "userImpact": "None; the defect existed only in uncommitted local browser-test serving and was blocked before publication.",
       "invalidatedProof": [
@@ -748,7 +766,7 @@
       "detectedAtUtc": "2026-08-17T18:04:26Z",
       "correctedAtUtc": "2026-08-17T18:05:34Z",
       "responsibleCommit": null,
-      "correctionCommit": null,
+      "correctionCommit": "5d0cba19f21a539e133a8ef079b0c2ade7eac93b",
       "symptom": "Tuple-array HeadersInit values would have been spread into numeric object keys.",
       "userImpact": "None; typed lint found the uncommitted edge case before publication.",
       "invalidatedProof": ["lint", "gateway-headers"],
@@ -764,7 +782,7 @@
       "detectedAtUtc": "2026-08-17T18:07:38Z",
       "correctedAtUtc": "2026-08-17T18:07:53Z",
       "responsibleCommit": null,
-      "correctionCommit": null,
+      "correctionCommit": "5d0cba19f21a539e133a8ef079b0c2ade7eac93b",
       "symptom": "Secret scan falsely classified an uppercase Vercel environment identifier as a token.",
       "userImpact": "None; the false positive blocked only local release verification.",
       "invalidatedProof": ["secret-scan", "public-readiness"],
