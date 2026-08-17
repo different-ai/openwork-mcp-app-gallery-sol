@@ -8,12 +8,13 @@ const slugs = [
   "scenario-modeler",
   "transcript",
 ] as const;
+const remote = process.env.PLAYWRIGHT_BASE_URL ? "&remote=1" : "";
 
 for (const slug of slugs) {
   test(`${slug} initializes and renders in an independent MCP Apps bridge host`, async ({
     page,
   }) => {
-    await page.goto(`/__test/host?slug=${slug}`);
+    await page.goto(`http://127.0.0.1:4173/__test/host?slug=${slug}${remote}`);
     await expect(page.locator("html")).toHaveAttribute(
       "data-host-state",
       "ready",

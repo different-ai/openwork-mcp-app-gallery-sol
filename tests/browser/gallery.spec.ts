@@ -1,11 +1,15 @@
 import { expect, test } from "@playwright/test";
 
+const galleryOrigin = new URL(
+  process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:4173",
+).origin;
+
 test("the public gallery renders six accessible, copyable cards", async ({
   page,
   context,
 }) => {
   await context.grantPermissions(["clipboard-read", "clipboard-write"], {
-    origin: "http://127.0.0.1:4173",
+    origin: galleryOrigin,
   });
   await page.goto("/");
   await expect(page).toHaveTitle("Hosted MCP Apps Example Gallery");
@@ -16,7 +20,10 @@ test("the public gallery renders six accessible, copyable cards", async ({
     await expect(image).toHaveAttribute("alt", /\S/u);
   for (const endpoint of await page.locator(".endpoint").all())
     await expect(endpoint).toContainText(
-      /^http:\/\/127\.0\.0\.1:4173\/apps\/[a-z0-9-]+\/mcp$/u,
+      new RegExp(
+        `^${galleryOrigin.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}/apps/[a-z0-9-]+/mcp$`,
+        "u",
+      ),
     );
 
   const firstButton = page.locator(".copy").first();
@@ -24,7 +31,7 @@ test("the public gallery renders six accessible, copyable cards", async ({
   await expect(firstButton).toHaveText("Copied");
   await expect(cards.first().getByRole("status")).toHaveText("MCP URL copied.");
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(
-    "http://127.0.0.1:4173/apps/get-time/mcp",
+    `${galleryOrigin}/apps/get-time/mcp`,
   );
 });
 
@@ -66,8 +73,6 @@ test("apps.json reflects enabled public state with deliberate revalidation", asy
   const body = (await response.json()) as { apps: { endpoint: string }[] };
   expect(body.apps).toHaveLength(6);
   expect(
-    body.apps.every((app) =>
-      app.endpoint.startsWith("http://127.0.0.1:4173/apps/"),
-    ),
+    body.apps.every((app) => app.endpoint.startsWith(`${galleryOrigin}/apps/`)),
   ).toBe(true);
 });

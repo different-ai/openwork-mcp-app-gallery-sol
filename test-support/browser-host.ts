@@ -14,6 +14,7 @@ const requiredSlugs = new Set([
   "transcript",
 ]);
 const slug = new URL(location.href).searchParams.get("slug") ?? "";
+const remote = new URL(location.href).searchParams.get("remote") === "1";
 const status = document.querySelector<HTMLElement>("#host-status")!;
 const iframe = document.querySelector<HTMLIFrameElement>("#app")!;
 
@@ -25,7 +26,10 @@ function fail(reason: unknown): void {
 
 async function start(): Promise<void> {
   if (!requiredSlugs.has(slug)) throw new Error("Unknown app slug");
-  const endpoint = new URL(`/apps/${slug}/mcp`, location.origin);
+  const endpoint = new URL(
+    remote ? `/__test/remote/${slug}/mcp` : `/apps/${slug}/mcp`,
+    location.origin,
+  );
   const client = new Client(
     { name: "gallery-independent-browser-host", version: "1.0.0" },
     {

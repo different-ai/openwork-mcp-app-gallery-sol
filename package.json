@@ -28,6 +28,7 @@
     "test:contract": "vitest run tests/contract",
     "test:gateway": "vitest run tests/gateway",
     "test:browser": "playwright test",
+    "verify:deployment": "tsx scripts/verify-deployment.ts",
     "verify:notices": "tsx scripts/verify-notices.ts",
     "check:upstream": "tsx scripts/check-upstream.ts",
     "check:upstream:remote": "tsx scripts/check-upstream.ts --remote",

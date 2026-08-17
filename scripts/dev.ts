@@ -7,6 +7,24 @@ import { GALLERY_APPS } from "../src/catalog.js";
 
 const port = 4173;
 const development = new Hono();
+const remoteOrigin = (() => {
+  const candidate = process.env.GALLERY_REMOTE_TEST_ORIGIN;
+  if (!candidate) return undefined;
+  const url = new URL(candidate);
+  if (
+    url.protocol !== "https:" ||
+    url.username ||
+    url.password ||
+    url.pathname !== "/" ||
+    url.search ||
+    url.hash
+  ) {
+    throw new Error(
+      "GALLERY_REMOTE_TEST_ORIGIN must be an origin-only HTTPS URL",
+    );
+  }
+  return url;
+})();
 const hostScriptPath = fileURLToPath(
   new URL("../.build/test-host/host.js", import.meta.url),
 );
@@ -38,6 +56,50 @@ development.get("/__test/host.js", (context) =>
       })
     : context.notFound(),
 );
+development.all("/__test/remote/:slug/mcp", async (context) => {
+  if (!remoteOrigin) return context.notFound();
+  const slug = context.req.param("slug");
+  if (!GALLERY_APPS.some((entry) => entry.slug === slug))
+    return context.notFound();
+  const incoming = context.req.raw;
+  const headers = new Headers();
+  for (const name of [
+    "accept",
+    "content-type",
+    "mcp-protocol-version",
+    "mcp-session-id",
+  ]) {
+    const value = incoming.headers.get(name);
+    if (value) headers.set(name, value);
+  }
+  const protectionBypass = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+  if (protectionBypass)
+    headers.set("x-vercel-protection-bypass", protectionBypass);
+  const response = await fetch(new URL(`/apps/${slug}/mcp`, remoteOrigin), {
+    method: incoming.method,
+    headers,
+    body:
+      incoming.method === "GET" || incoming.method === "HEAD"
+        ? undefined
+        : await incoming.arrayBuffer(),
+    signal: incoming.signal,
+    redirect: "error",
+  });
+  const responseHeaders = new Headers();
+  for (const name of [
+    "cache-control",
+    "content-type",
+    "mcp-protocol-version",
+    "mcp-session-id",
+  ]) {
+    const value = response.headers.get(name);
+    if (value) responseHeaders.set(name, value);
+  }
+  return new Response(response.body, {
+    status: response.status,
+    headers: responseHeaders,
+  });
+});
 development.get("/assets/:filename", (context) => {
   const body = screenshots.get(`/assets/${context.req.param("filename")}`);
   return body

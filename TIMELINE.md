@@ -22,16 +22,16 @@
 | Completed Europe/Berlin                      | Pending                   |
 | Total wall-clock duration                    | Running                   |
 | Total external-wait duration                 | 69 seconds                |
-| Total CI-wait duration                       | 0 seconds                 |
-| Total Vercel-wait duration                   | 0 seconds                 |
-| Total recorded rework duration               | 642 seconds               |
+| Total CI-wait duration                       | 169 seconds               |
+| Total Vercel-wait duration                   | 143 seconds               |
+| Total recorded rework duration               | 1,040 seconds             |
 | Estimated active implementation duration     | Pending — Estimated       |
 | Time to first working two-app local vertical | 2,307 seconds             |
 | Time to first working six-app catalog        | 2,307 seconds             |
 | Time to first green local `release:check:ci` | 3,249 seconds             |
-| Time to PR open                              | Pending                   |
-| Time to first Preview                        | Pending                   |
-| Time to first all-green PR head              | Pending                   |
+| Time to PR open                              | 3,700 seconds             |
+| Time to first Preview                        | 4,100 seconds             |
+| Time to first all-green PR head              | 3,869 seconds             |
 | Time to merge                                | Pending                   |
 | Time to staged Production readiness          | Pending                   |
 | Time to production promotion                 | Pending                   |
@@ -66,6 +66,9 @@
 | M-007 | Six UIs passed independent App bridge browser harness  | 2026-08-17T18:02:37Z | 2026-08-17T20:02:37+02:00 | 2,653 seconds |
 | M-008 | First green local `release:check:ci`                   | 2026-08-17T18:12:33Z | 2026-08-17T20:12:33+02:00 | 3,249 seconds |
 | M-009 | Green local release candidate committed                | 2026-08-17T18:17:47Z | 2026-08-17T20:17:47+02:00 | 3,563 seconds |
+| M-010 | Ready pull request opened                              | 2026-08-17T18:20:04Z | 2026-08-17T20:20:04+02:00 | 3,700 seconds |
+| M-011 | First all-green GitHub check set                       | 2026-08-17T18:22:53Z | 2026-08-17T20:22:53+02:00 | 3,869 seconds |
+| M-012 | First explicit Preview became ready                    | 2026-08-17T18:26:44Z | 2026-08-17T20:26:44+02:00 | 4,100 seconds |
 
 ## Chronological Event Log
 
@@ -94,6 +97,17 @@
 | EVT-021 | 2026-08-17T18:08:15Z | 2026-08-17T20:08:15+02:00 | 2,991 seconds | P5    | Dependency audit      | Upgraded exactly to patched `yaml@2.8.3`, regenerated lock/SBOM, and obtained a clean complete audit.                                                                                                                                   | Resolved      | `ISS-009`                                           |
 | EVT-022 | 2026-08-17T18:12:33Z | 2026-08-17T20:12:33+02:00 | 3,249 seconds | P5    | Release verification  | First complete local `release:check:ci` passed frozen install, formatting, lint, strict types, 42 Vitest checks, 10 Playwright checks, notices, provenance, architecture, full audit, scans, SBOM, deterministic generation, and build. | Passed        | `M-008`                                             |
 | EVT-023 | 2026-08-17T18:17:47Z | 2026-08-17T20:17:47+02:00 | 3,563 seconds | P6    | Git                   | Committed the coherent green implementation, generated artifacts, tests, security/provenance controls, and truthful running timeline on `sol/gallery-v1`.                                                                               | Passed        | `5d0cba19f21a539e133a8ef079b0c2ade7eac93b`, `M-009` |
+| EVT-024 | 2026-08-17T18:20:04Z | 2026-08-17T20:20:04+02:00 | 3,700 seconds | P6    | GitHub                | Pushed `sol/gallery-v1` and opened ready PR 1 against `forward` with architecture, safety, provenance, verification, limitations, and rollback documented.                                                                              | Passed        | `PR-1`, `M-010`                                     |
+| EVT-025 | 2026-08-17T18:22:53Z | 2026-08-17T20:22:53+02:00 | 3,869 seconds | P6    | CI                    | Release check, CodeQL, locked audit, and public-readiness passed on the exact PR head; dependency review skipped while the repository remained private.                                                                                 | Passed        | `a315b24a35dd9afcb99752f0395e352abb6500fe`, `M-011` |
+| EVT-026 | 2026-08-17T18:22:58Z | 2026-08-17T20:22:58+02:00 | 3,874 seconds | P6    | Vercel configuration  | Vercel rejected Git connection for the private organization repository on Hobby; retained the exact project configuration and used manual protected Preview until the authorized public-visibility gate.                                | Deferred      | `ISS-010`                                           |
+| EVT-027 | 2026-08-17T18:23:16Z | 2026-08-17T20:23:16+02:00 | 3,892 seconds | P6    | Vercel deployment     | An unqualified first deploy unexpectedly targeted Production and assigned the stable alias despite automatic-domain controls.                                                                                                           | Investigating | `DEP-001`, `ISS-011`, `REG-006`                     |
+| EVT-028 | 2026-08-17T18:25:20Z | 2026-08-17T20:25:20+02:00 | 4,016 seconds | P6    | Vercel deployment     | Removed only the premature stable alias, retained the immutable deployment record, and changed subsequent commands to explicit target flags.                                                                                            | Resolved      | `DEP-001`, `ISS-011`, `REG-006`                     |
+| EVT-029 | 2026-08-17T18:26:44Z | 2026-08-17T20:26:44+02:00 | 4,100 seconds | P6    | Vercel deployment     | Explicit `target=preview` DEP-002 became ready at exact head `a315b24` after 70 seconds.                                                                                                                                                | Passed        | `DEP-002`, `M-012`                                  |
+| EVT-030 | 2026-08-17T18:34:10Z | 2026-08-17T20:34:10+02:00 | 4,546 seconds | P6    | Preview verification  | Direct proof reached Vercel Authentication rather than the app; Standard Protection remained enabled and the supported automation bypass was selected.                                                                                  | Resolved      | `ISS-012`                                           |
+| EVT-031 | 2026-08-17T18:38:26Z | 2026-08-17T20:38:26+02:00 | 4,802 seconds | P6    | Credential hygiene    | A diagnostic projection exposed the initial bypass because Vercel represents it as an object key; it was revoked and regenerated before successful proof, with the replacement retained only in ephemeral process state.                | Resolved      | `ISS-013`, `REG-007`                                |
+| EVT-032 | 2026-08-17T18:40:20Z | 2026-08-17T20:40:20+02:00 | 4,916 seconds | P6    | Preview verification  | Exact Preview network proof passed all six current and six legacy MCP contracts, public metadata/headers, negative boundaries, and post-abort health after correcting a doctype-case verifier false negative.                           | Passed        | `DEP-002`, `ISS-014`                                |
+| EVT-033 | 2026-08-17T18:41:35Z | 2026-08-17T20:41:35+02:00 | 4,991 seconds | P6    | Browser verification  | All six deployed App UIs passed through the independent AppBridge host, but the full build SHA widened the 320 px gallery to 356 px.                                                                                                    | Failed        | `DEP-002`, `ISS-015`, `REG-008`                     |
+| EVT-034 | 2026-08-17T18:42:57Z | 2026-08-17T20:42:57+02:00 | 5,073 seconds | P6    | Browser verification  | Wrapped code values, made local proof always use a 40-character SHA, regenerated the gallery, and passed build, 42 Vitest checks, and ten Playwright checks. DEP-002 remains failed pending a replacement Preview.                      | Resolved      | `ISS-015`, `REG-008`                                |
 
 ## Issues Encountered
 
@@ -242,6 +256,50 @@
 - Closing verification: complete audit returned no known vulnerabilities and the full gate regenerated the SBOM.
 - Time-to-repair: 12 seconds. Final status: Resolved.
 
+### ISS-010 — Private organization repository could not connect on Vercel Hobby
+
+- First observed: 2026-08-17T18:22:58Z (3,874 seconds elapsed). Phase/origin: P6; external plan constraint.
+- Expected: connect the exact Vercel project to the exact private GitHub repository and receive a native deployment check.
+- Observed: Vercel rejected the private organization repository on the current Hobby plan.
+- Interim correction: retained correct project settings and used a manual protected Preview. Final correction remains open until the repository passes Preview, security, legal, and public-readiness gates, at which point only this repository can be made public and reconnected without spend.
+- Invalidated proof: native Vercel GitHub check. Status: Open.
+
+### ISS-011 — First unqualified Vercel deploy targeted Production
+
+- Observed/resolved: 2026-08-17T18:23:16Z / 2026-08-17T18:25:20Z. Phase/origin: P6; self-introduced command ambiguity plus provider default.
+- Expected: unpromoted Preview with no stable alias. Observed: `target=production` and `aliasAssigned=true`.
+- Correction: removed only the premature alias, retained the immutable deployment for audit, and used explicit target flags thereafter.
+- User impact: a new stable hostname briefly resolved to the unverified build; there was no prior production to displace.
+- Invalidated proof: first-Preview sequence and promotion order. Status: Resolved.
+
+### ISS-012 — Standard Protection intercepted direct Preview proof
+
+- Observed/resolved: 2026-08-17T18:34:10Z / 2026-08-17T18:34:42Z. Phase/origin: P6; expected external protection behavior.
+- An unauthenticated request received a 302 Vercel Authentication redirect before `/healthz`.
+- Correction: kept Standard Protection enabled and used Vercel's supported automation bypass only through ephemeral request headers.
+- Closing verification: exact protected Preview network and browser requests reached the app while unauthenticated access remained protected. Status: Resolved.
+
+### ISS-013 — Diagnostic output revealed an automation-bypass object key
+
+- Observed/resolved: 2026-08-17T18:35:40Z / 2026-08-17T18:38:26Z. Phase/origin: P6; self-introduced credential-hygiene regression.
+- Expected: redact secret values. Observed: Vercel represents each bypass secret as a property name, so value-only redaction was insufficient.
+- Correction: stopped using the exposed value, read the exact official revoke/regenerate schema, rotated it, and handled the replacement only in ephemeral process state with no later key enumeration.
+- Invalidated proof: the first bypass and all proof before rotation. Closing verification: Vercel reported a newly created bypass before any successful Preview proof. Status: Resolved.
+
+### ISS-014 — Deployment verifier treated HTML doctype case as significant
+
+- Observed/resolved: 2026-08-17T18:39:20Z / 2026-08-17T18:39:46Z. Phase/origin: P6; self-introduced verifier false negative.
+- Budget Allocator returned the correct MIME, resource, and 354,133-byte HTML but used frozen upstream uppercase `DOCTYPE`.
+- Correction: aligned the remote verifier with the existing standards-insensitive local contract without weakening MIME, size, URI, or document checks.
+- Closing verification: all six current and six legacy deployed contracts passed. Status: Resolved.
+
+### ISS-015 — Full deployed SHA overflowed the 320 px gallery
+
+- Observed/local correction: 2026-08-17T18:41:35Z / 2026-08-17T18:42:57Z. Phase/origin: P6; self-introduced responsive regression.
+- All six deployed App UIs passed, but the full 40-character build SHA made the document 356 px wide at a 320 px viewport. Local proof had used the shorter `development` label.
+- Correction: added safe wrapping for inline code metadata and made every local browser run use a production-length SHA fixture.
+- Closing verification: build, 42 Vitest checks, and all ten local browser checks passed. Replacement exact Preview proof remains required. Status: Resolved locally, pending Preview.
+
 ## Regressions Introduced and Corrected
 
 ### REG-001 — Build configuration admitted an oversized UI candidate
@@ -304,11 +362,34 @@
 - Invalidated proof: secret scan and public readiness.
 - Closing verification: the unchanged full source scope passed after matching only real lowercase provider prefixes. Time-to-repair: 15 seconds. Status: Resolved.
 
+### REG-006 — Unqualified deployment bypassed the intended Preview sequence
+
+- Corresponding issue: ISS-011. Detected/corrected: 2026-08-17T18:24:29Z / 2026-08-17T18:25:20Z.
+- Symptom: first deployment targeted Production and received the stable alias before staging proof.
+- User impact: a new hostname briefly exposed the exact build; no prior production existed. Proof invalidated: Preview and promotion order.
+- Closing verification: alias removed and replacement command explicitly targeted Preview. Status: Resolved.
+
+### REG-007 — Initial automation bypass was exposed in diagnostic output
+
+- Corresponding issue: ISS-013. Detected immediately and corrected at 2026-08-17T18:38:26Z.
+- User impact: the ephemeral Preview credential was treated as compromised; no application data or production credential was exposed.
+- Proof invalidated: first bypass and all proof before rotation. Closing verification: old bypass revoked, different bypass generated before successful proof. Status: Resolved.
+
+### REG-008 — Local mobile fixture did not represent production build metadata
+
+- Corresponding issue: ISS-015. Responsible commit: `5d0cba19f21a539e133a8ef079b0c2ade7eac93b`.
+- Detected/local correction: 2026-08-17T18:41:35Z / 2026-08-17T18:42:57Z.
+- Symptom: full SHA widened the deployed page from 320 px to 356 px. User impact: protected failed Preview only; no promoted origin.
+- Proof invalidated: DEP-002 overall and Preview 320 px proof. Closing verification: corrected local candidate passes with a forced 40-character SHA; replacement Preview pending.
+
 ## External Waits
 
-| ID       | Classification  | Start UTC            | End UTC              | Duration   | Outcome                            |
-| -------- | --------------- | -------------------- | -------------------- | ---------- | ---------------------------------- |
-| WAIT-001 | GitHub provider | 2026-08-17T17:26:02Z | 2026-08-17T17:27:11Z | 69 seconds | Branch-protection retry succeeded. |
+| ID       | Classification  | Start UTC            | End UTC              | Duration    | Outcome                                                           |
+| -------- | --------------- | -------------------- | -------------------- | ----------- | ----------------------------------------------------------------- |
+| WAIT-001 | GitHub provider | 2026-08-17T17:26:02Z | 2026-08-17T17:27:11Z | 69 seconds  | Branch-protection retry succeeded.                                |
+| WAIT-002 | GitHub Actions  | 2026-08-17T18:20:04Z | 2026-08-17T18:22:53Z | 169 seconds | Initial PR head reached its first all-green applicable check set. |
+| WAIT-003 | Vercel build    | 2026-08-17T18:23:16Z | 2026-08-17T18:24:29Z | 73 seconds  | DEP-001 became ready but failed the target process gate.          |
+| WAIT-004 | Vercel build    | 2026-08-17T18:25:34Z | 2026-08-17T18:26:44Z | 70 seconds  | Explicit DEP-002 Preview became ready.                            |
 
 ## Rework and Abandoned Approaches
 
@@ -321,11 +402,18 @@
 | REWORK-005 | Object spread over generic `HeadersInit`          | Concise composition                                         | Tuple arrays have incompatible spread semantics                                    | 68 seconds       | Header policies and gateway boundaries               | Platform `Headers` API                                                            |
 | REWORK-006 | Case-insensitive provider token prefix            | Conservative secret scan                                    | Misclassified uppercase identifiers                                                | 15 seconds       | Full scan scope and other credential patterns        | Real lowercase token prefix                                                       |
 | REWORK-007 | `yaml@2.8.1` build dependency                     | Exact initial build-tool pin                                | Complete audit found a patched moderate advisory                                   | 12 seconds       | Same API and deterministic build behavior            | Exact `yaml@2.8.3`, regenerated lock and SBOM                                     |
+| REWORK-008 | Unqualified first Vercel deploy                   | New project had automatic-domain controls                   | Provider selected Production and assigned stable alias                             | 124 seconds      | Immutable build and timing record                    | Explicit target flags and later explicit promotion                                |
+| REWORK-009 | Value-only bypass redaction                       | Inspect state without printing secret values                | Provider encoded secret as a property name                                         | 166 seconds      | Protected Preview verification design                | Rotation and no key enumeration                                                   |
+| REWORK-010 | Case-sensitive HTML doctype check                 | Fast document-shape assertion                               | HTML doctype is case-insensitive                                                   | 26 seconds       | MIME, size, URI, tool, dual-era checks               | Standards-insensitive assertion                                                   |
+| REWORK-011 | Short local development build label               | Exercise ordinary local rendering                           | Did not model a 40-character production SHA                                        | 82 seconds       | Responsive and deployed-browser harness              | Code wrapping plus production-length fixture                                      |
 
 ## Deployment Timeline
 
-No deployment exists yet.
+| ID      | Provider deployment ID             | Environment                   | Exact SHA | Provider build | Verification                                                                          | Verdict           | Promoted |
+| ------- | ---------------------------------- | ----------------------------- | --------- | -------------- | ------------------------------------------------------------------------------------- | ----------------- | -------- |
+| DEP-001 | `dpl_62cR91MQQVfz5a1iwpt9yoqH977e` | Production target, unpromoted | `a315b24` | 73 seconds     | Skipped after wrong-target process violation; unexpected stable alias removed         | FailedProcessGate | No       |
+| DEP-002 | `dpl_LemQchAQpywdvsEG5K14xBWGn9KE` | Protected Preview             | `a315b24` | 70 seconds     | Network and 12 MCP contracts passed; six App UIs passed; 320 px gallery layout failed | Failed            | No       |
 
 ## Final State
 
-Running. Repository foundation, the dual-era six-app catalog, the gallery/browser experience, public-runtime hardening, and the first complete local `release:check:ci` have passed. CI and staging deployment are in progress. The longer 24-hour operational observation is Pending Operational Observation and is not part of the fixed 20-minute benchmark gate.
+Running. Repository foundation, the dual-era six-app catalog, local gallery/browser experience, public-runtime hardening, and initial exact-head CI passed. DEP-001 failed the deployment-sequence gate and DEP-002 failed the deployed 320 px layout gate; neither was promoted. The responsive correction and production-length fixture pass locally and require a new exact-SHA Preview. The longer 24-hour operational observation is Pending Operational Observation and is not part of the fixed 20-minute benchmark gate.

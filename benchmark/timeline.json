@@ -11,9 +11,9 @@
   "totalElapsedMs": null,
   "estimatedActiveMs": null,
   "externalWaitMs": 69000,
-  "ciWaitMs": 0,
-  "vercelWaitMs": 0,
-  "reworkMs": 642000,
+  "ciWaitMs": 169000,
+  "vercelWaitMs": 143000,
+  "reworkMs": 1040000,
   "currentPhase": "P6",
   "finalVerdict": "Running",
   "milestones": [
@@ -79,6 +79,27 @@
       "atUtc": "2026-08-17T18:17:47Z",
       "atLocal": "2026-08-17T20:17:47+02:00",
       "elapsedMs": 3563000
+    },
+    {
+      "id": "M-010",
+      "name": "Ready pull request opened",
+      "atUtc": "2026-08-17T18:20:04Z",
+      "atLocal": "2026-08-17T20:20:04+02:00",
+      "elapsedMs": 3700000
+    },
+    {
+      "id": "M-011",
+      "name": "First all-green GitHub check set",
+      "atUtc": "2026-08-17T18:22:53Z",
+      "atLocal": "2026-08-17T20:22:53+02:00",
+      "elapsedMs": 3869000
+    },
+    {
+      "id": "M-012",
+      "name": "First explicit Preview became ready",
+      "atUtc": "2026-08-17T18:26:44Z",
+      "atLocal": "2026-08-17T20:26:44+02:00",
+      "elapsedMs": 4100000
     }
   ],
   "phases": [
@@ -426,6 +447,127 @@
       "event": "Committed the coherent green implementation, generated artifacts, tests, security/provenance controls, and truthful running timeline on sol/gallery-v1.",
       "result": "Passed",
       "relatedIdentifier": "5d0cba19f21a539e133a8ef079b0c2ade7eac93b;M-009"
+    },
+    {
+      "id": "EVT-024",
+      "atUtc": "2026-08-17T18:20:04Z",
+      "atLocal": "2026-08-17T20:20:04+02:00",
+      "elapsedMs": 3700000,
+      "phase": "P6",
+      "category": "github",
+      "event": "Pushed sol/gallery-v1 and opened ready pull request 1 against forward with the bounded architecture, safety, provenance, verification, limitation, and rollback record.",
+      "result": "Passed",
+      "relatedIdentifier": "PR-1;M-010"
+    },
+    {
+      "id": "EVT-025",
+      "atUtc": "2026-08-17T18:22:53Z",
+      "atLocal": "2026-08-17T20:22:53+02:00",
+      "elapsedMs": 3869000,
+      "phase": "P6",
+      "category": "ci",
+      "event": "Release check, CodeQL, locked audit, and public-readiness checks passed on the exact PR head; dependency review skipped because the repository was still private as required by the release sequence.",
+      "result": "Passed",
+      "relatedIdentifier": "a315b24a35dd9afcb99752f0395e352abb6500fe;M-011"
+    },
+    {
+      "id": "EVT-026",
+      "atUtc": "2026-08-17T18:22:58Z",
+      "atLocal": "2026-08-17T20:22:58+02:00",
+      "elapsedMs": 3874000,
+      "phase": "P6",
+      "category": "vercel-configuration",
+      "event": "Vercel rejected Git connection for the private organization repository on the Hobby plan; the project remained correctly configured and manual Preview became the bounded interim path.",
+      "result": "Deferred",
+      "relatedIdentifier": "ISS-010"
+    },
+    {
+      "id": "EVT-027",
+      "atUtc": "2026-08-17T18:23:16Z",
+      "atLocal": "2026-08-17T20:23:16+02:00",
+      "elapsedMs": 3892000,
+      "phase": "P6",
+      "category": "vercel-deployment",
+      "event": "An unqualified first Vercel deploy unexpectedly created a Production-target deployment and assigned the stable alias despite project-level automatic-domain controls.",
+      "result": "Investigating",
+      "relatedIdentifier": "DEP-001;ISS-011;REG-006"
+    },
+    {
+      "id": "EVT-028",
+      "atUtc": "2026-08-17T18:25:20Z",
+      "atLocal": "2026-08-17T20:25:20+02:00",
+      "elapsedMs": 4016000,
+      "phase": "P6",
+      "category": "vercel-deployment",
+      "event": "Removed the prematurely assigned stable alias, retained the immutable deployment for auditability, and changed subsequent commands to explicit target flags.",
+      "result": "Resolved",
+      "relatedIdentifier": "DEP-001;ISS-011;REG-006"
+    },
+    {
+      "id": "EVT-029",
+      "atUtc": "2026-08-17T18:26:44Z",
+      "atLocal": "2026-08-17T20:26:44+02:00",
+      "elapsedMs": 4100000,
+      "phase": "P6",
+      "category": "vercel-deployment",
+      "event": "The explicit target=preview deployment became ready at the exact a315b24 PR head after a 70-second provider build.",
+      "result": "Passed",
+      "relatedIdentifier": "DEP-002;M-012"
+    },
+    {
+      "id": "EVT-030",
+      "atUtc": "2026-08-17T18:34:10Z",
+      "atLocal": "2026-08-17T20:34:10+02:00",
+      "elapsedMs": 4546000,
+      "phase": "P6",
+      "category": "preview-verification",
+      "event": "Direct Preview verification reached Vercel Authentication rather than the application; preserved Standard Protection and selected the provider-supported automation-bypass path.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-012"
+    },
+    {
+      "id": "EVT-031",
+      "atUtc": "2026-08-17T18:38:26Z",
+      "atLocal": "2026-08-17T20:38:26+02:00",
+      "elapsedMs": 4802000,
+      "phase": "P6",
+      "category": "credential-hygiene",
+      "event": "A diagnostic projection exposed the first automation-bypass secret because Vercel represents it as an object key; revoked and regenerated it before any further proof, then handled only the rotated value in ephemeral process state.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-013;REG-007"
+    },
+    {
+      "id": "EVT-032",
+      "atUtc": "2026-08-17T18:40:20Z",
+      "atLocal": "2026-08-17T20:40:20+02:00",
+      "elapsedMs": 4916000,
+      "phase": "P6",
+      "category": "preview-verification",
+      "event": "Exact Preview network proof passed all six current and six legacy MCP contracts, public metadata and headers, malformed and oversized boundaries, disallowed methods, and post-abort health. A preceding verifier-only doctype-case false negative was corrected.",
+      "result": "Passed",
+      "relatedIdentifier": "DEP-002;ISS-014"
+    },
+    {
+      "id": "EVT-033",
+      "atUtc": "2026-08-17T18:41:35Z",
+      "atLocal": "2026-08-17T20:41:35+02:00",
+      "elapsedMs": 4991000,
+      "phase": "P6",
+      "category": "preview-browser-verification",
+      "event": "All six deployed MCP App UIs initialized and interacted through the independent AppBridge host, but the exact Preview gallery overflowed by 36 pixels at 320 pixels because its full build SHA was unbreakable.",
+      "result": "Failed",
+      "relatedIdentifier": "DEP-002;ISS-015;REG-008"
+    },
+    {
+      "id": "EVT-034",
+      "atUtc": "2026-08-17T18:42:57Z",
+      "atLocal": "2026-08-17T20:42:57+02:00",
+      "elapsedMs": 5073000,
+      "phase": "P6",
+      "category": "browser-verification",
+      "event": "Added safe wrapping for code values and made local browser proof always use a production-length SHA; build, 42 tests, and all ten browser checks passed locally. DEP-002 remains Failed pending a replacement Preview.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-015;REG-008"
     }
   ],
   "issues": [
@@ -702,6 +844,186 @@
       "timeToDetectMs": null,
       "timeToRepairMs": 12000,
       "status": "Resolved"
+    },
+    {
+      "id": "ISS-010",
+      "firstObservedAtUtc": "2026-08-17T18:22:58Z",
+      "firstObservedElapsedMs": 3874000,
+      "resolvedAtUtc": null,
+      "resolvedElapsedMs": null,
+      "phase": "P6",
+      "classification": "vercel-git-connection",
+      "origin": "external",
+      "expectedBehavior": "The exact Vercel project connects to the exact private GitHub repository and reports a native deployment check.",
+      "observedBehavior": "Vercel rejected the private organization repository because that connection is unavailable on the current Hobby plan.",
+      "symptom": "Git repository connection was refused before any linked deployment.",
+      "rootCause": "Current Vercel plan policy does not allow this private organization-repository connection.",
+      "attempts": [
+        "Connected only the exact SOL repository through the Vercel project configuration",
+        "Verified the exact GitHub repository visibility and Vercel project scope",
+        "Selected manual protected Preview proof until the authorized public-visibility gate is reached"
+      ],
+      "finalCorrection": "Pending: after Preview, security, legal, and public-readiness gates pass, make only this repository public and retry the native connection without plan spend.",
+      "affectedFiles": [],
+      "affectedCommits": [],
+      "invalidatedProof": ["native-vercel-github-check"],
+      "closingVerification": null,
+      "timeToDetectMs": 0,
+      "timeToRepairMs": null,
+      "status": "Open"
+    },
+    {
+      "id": "ISS-011",
+      "firstObservedAtUtc": "2026-08-17T18:23:16Z",
+      "firstObservedElapsedMs": 3892000,
+      "resolvedAtUtc": "2026-08-17T18:25:20Z",
+      "resolvedElapsedMs": 4016000,
+      "phase": "P6",
+      "classification": "vercel-deployment-target",
+      "origin": "self-introduced",
+      "expectedBehavior": "The first deployment is an unpromoted Preview with no stable alias.",
+      "observedBehavior": "An unqualified deploy targeted Production and assigned the stable alias despite automatic-domain controls.",
+      "symptom": "The deployment reported target=production and aliasAssigned=true.",
+      "rootCause": "The command omitted an explicit target and Vercel selected the new project's Production default; project domain-assignment controls did not suppress the CLI's first-production alias behavior.",
+      "attempts": [
+        "Inspected immutable deployment target and exact Git SHA",
+        "Removed only the newly assigned stable alias",
+        "Retained the immutable deployment record",
+        "Issued all subsequent deployments with an explicit target"
+      ],
+      "finalCorrection": "Removed the premature alias and created DEP-002 with explicit target=preview.",
+      "affectedFiles": [],
+      "affectedCommits": [],
+      "invalidatedProof": [
+        "first-preview-sequence",
+        "stable-origin-promotion-order"
+      ],
+      "closingVerification": "The stable alias no longer pointed to DEP-001 and DEP-002 reported no Production target.",
+      "timeToDetectMs": 73000,
+      "timeToRepairMs": 51000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-012",
+      "firstObservedAtUtc": "2026-08-17T18:34:10Z",
+      "firstObservedElapsedMs": 4546000,
+      "resolvedAtUtc": "2026-08-17T18:34:42Z",
+      "resolvedElapsedMs": 4578000,
+      "phase": "P6",
+      "classification": "preview-protection",
+      "origin": "external",
+      "expectedBehavior": "Automated proof can reach the protected immutable Preview without making its private address public.",
+      "observedBehavior": "Unauthenticated requests received a 302 Vercel Authentication redirect.",
+      "symptom": "The application verifier failed before reaching /healthz.",
+      "rootCause": "Hobby Standard Protection correctly protects generated Preview and deployment URLs.",
+      "attempts": [
+        "Confirmed the redirect without printing the URL",
+        "Inspected only non-secret project protection state",
+        "Used Vercel's supported automation-bypass mechanism"
+      ],
+      "finalCorrection": "Kept Standard Protection enabled and provided the bypass only through ephemeral request headers.",
+      "affectedFiles": [
+        "playwright.config.ts",
+        "scripts/dev.ts",
+        "scripts/verify-deployment.ts"
+      ],
+      "affectedCommits": [],
+      "invalidatedProof": ["initial-preview-network-run"],
+      "closingVerification": "The exact protected Preview passed network and browser requests with the rotated bypass; unauthenticated access remained protected.",
+      "timeToDetectMs": 0,
+      "timeToRepairMs": 32000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-013",
+      "firstObservedAtUtc": "2026-08-17T18:35:40Z",
+      "firstObservedElapsedMs": 4636000,
+      "resolvedAtUtc": "2026-08-17T18:38:26Z",
+      "resolvedElapsedMs": 4802000,
+      "phase": "P6",
+      "classification": "credential-hygiene",
+      "origin": "self-introduced",
+      "expectedBehavior": "Protection-bypass diagnostics reveal configuration state without revealing the credential.",
+      "observedBehavior": "A projected metadata response printed the bypass object key, which is itself the secret.",
+      "symptom": "The first automation-bypass value appeared in local command output.",
+      "rootCause": "The diagnostic redacted object values but did not account for Vercel representing automation secrets as property names.",
+      "attempts": [
+        "Stopped using the exposed bypass for proof",
+        "Read the official OpenAPI schema for the exact revoke-and-regenerate operation",
+        "Revoked and regenerated the bypass",
+        "Handled the replacement only in ephemeral shell and process environment"
+      ],
+      "finalCorrection": "Rotated the exposed value before further verification and eliminated key enumeration from later output.",
+      "affectedFiles": [],
+      "affectedCommits": [],
+      "invalidatedProof": [
+        "first-automation-bypass",
+        "preview-proof-before-rotation"
+      ],
+      "closingVerification": "Vercel reported a newly created automation bypass at 18:38:26Z; the prior value no longer authenticated subsequent proof.",
+      "timeToDetectMs": 0,
+      "timeToRepairMs": 166000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-014",
+      "firstObservedAtUtc": "2026-08-17T18:39:20Z",
+      "firstObservedElapsedMs": 4856000,
+      "resolvedAtUtc": "2026-08-17T18:39:46Z",
+      "resolvedElapsedMs": 4882000,
+      "phase": "P6",
+      "classification": "deployment-verifier",
+      "origin": "self-introduced",
+      "expectedBehavior": "The deployment verifier accepts standards-equivalent HTML doctypes already accepted by local contract tests.",
+      "observedBehavior": "Budget Allocator failed only because its frozen upstream document uses uppercase DOCTYPE.",
+      "symptom": "Resource contract false negative after correct MIME, size, and HTML delivery.",
+      "rootCause": "The deployment verifier used a case-sensitive string prefix while the existing contract correctly used a case-insensitive expression.",
+      "attempts": [
+        "Probed only safe resource metadata and byte length",
+        "Aligned the remote assertion with the local standards-insensitive assertion",
+        "Reran the complete deployment verifier"
+      ],
+      "finalCorrection": "Use a case-insensitive doctype assertion without weakening MIME, size, or document-shape checks.",
+      "affectedFiles": ["scripts/verify-deployment.ts"],
+      "affectedCommits": [],
+      "invalidatedProof": ["first-preview-verifier-run"],
+      "closingVerification": "All six current and all six legacy deployed contracts passed in the complete rerun.",
+      "timeToDetectMs": 0,
+      "timeToRepairMs": 26000,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-015",
+      "firstObservedAtUtc": "2026-08-17T18:41:35Z",
+      "firstObservedElapsedMs": 4991000,
+      "resolvedAtUtc": "2026-08-17T18:42:57Z",
+      "resolvedElapsedMs": 5073000,
+      "phase": "P6",
+      "classification": "responsive-gallery",
+      "origin": "self-introduced",
+      "expectedBehavior": "The deployed gallery has no horizontal overflow at a 320-pixel viewport.",
+      "observedBehavior": "The exact Preview document measured 356 pixels wide because each full build SHA was an unbreakable inline code token.",
+      "symptom": "One of ten deployed browser checks failed while all six App UIs passed.",
+      "rootCause": "Local browser proof rendered the short development build label, so it did not exercise production-length build metadata.",
+      "attempts": [
+        "Identified exact overflowing elements without printing the Preview URL",
+        "Added anywhere wrapping to inline code values",
+        "Forced every local browser run to use a 40-character test SHA",
+        "Regenerated the content-hashed gallery and reran build and browser checks"
+      ],
+      "finalCorrection": "Wrap code metadata safely and make production-length SHA content a permanent browser-test fixture.",
+      "affectedFiles": [
+        "src/gallery-render.ts",
+        "playwright.config.ts",
+        "public/index.html",
+        "public/assets/gallery-fce8a2ed61f288ef.css"
+      ],
+      "affectedCommits": [],
+      "invalidatedProof": ["DEP-002-overall", "preview-320px-layout"],
+      "closingVerification": "Local production-length build metadata rendered at 320 pixels with no overflow; all ten Playwright checks and 42 Vitest checks passed. Replacement Preview proof remains required.",
+      "timeToDetectMs": null,
+      "timeToRepairMs": 82000,
+      "status": "ResolvedLocalPendingPreview"
     }
   ],
   "regressions": [
@@ -790,9 +1112,87 @@
       "timeToDetectMs": null,
       "timeToRepairMs": 15000,
       "status": "Resolved"
+    },
+    {
+      "id": "REG-006",
+      "issueId": "ISS-011",
+      "introducedAtUtc": "2026-08-17T18:23:16Z",
+      "detectedAtUtc": "2026-08-17T18:24:29Z",
+      "correctedAtUtc": "2026-08-17T18:25:20Z",
+      "responsibleCommit": null,
+      "correctionCommit": null,
+      "symptom": "First Vercel deployment targeted Production and received the stable alias before staging proof.",
+      "userImpact": "A newly created stable hostname briefly resolved to an unverified exact-SHA deployment; no previous production existed to displace.",
+      "invalidatedProof": ["first-preview-sequence", "promotion-order"],
+      "closingVerification": "The alias was removed, the deployment remained immutable for audit, and the next deploy explicitly targeted Preview.",
+      "timeToDetectMs": 73000,
+      "timeToRepairMs": 51000,
+      "status": "Resolved"
+    },
+    {
+      "id": "REG-007",
+      "issueId": "ISS-013",
+      "introducedAtUtc": "2026-08-17T18:35:40Z",
+      "detectedAtUtc": "2026-08-17T18:35:40Z",
+      "correctedAtUtc": "2026-08-17T18:38:26Z",
+      "responsibleCommit": null,
+      "correctionCommit": null,
+      "symptom": "The first Vercel automation-bypass value was revealed as a metadata object key in diagnostic output.",
+      "userImpact": "The ephemeral Preview credential had to be treated as compromised; no application data or production credential was exposed.",
+      "invalidatedProof": [
+        "first-automation-bypass",
+        "preview-proof-before-rotation"
+      ],
+      "closingVerification": "The exposed bypass was revoked and a different bypass was generated before any successful Preview proof.",
+      "timeToDetectMs": 0,
+      "timeToRepairMs": 166000,
+      "status": "Resolved"
+    },
+    {
+      "id": "REG-008",
+      "issueId": "ISS-015",
+      "introducedAtUtc": "2026-08-17T18:17:40Z",
+      "detectedAtUtc": "2026-08-17T18:41:35Z",
+      "correctedAtUtc": "2026-08-17T18:42:57Z",
+      "responsibleCommit": "5d0cba19f21a539e133a8ef079b0c2ade7eac93b",
+      "correctionCommit": null,
+      "symptom": "Full 40-character deployed build SHAs forced the 320-pixel gallery to 356 pixels.",
+      "userImpact": "Only the protected failed Preview was affected; no promoted stable origin existed.",
+      "invalidatedProof": ["DEP-002-overall", "preview-320px-layout"],
+      "closingVerification": "The corrected local candidate uses production-length SHA fixtures and passes all ten browser checks; replacement Preview proof is pending.",
+      "timeToDetectMs": 1435000,
+      "timeToRepairMs": 82000,
+      "status": "ResolvedLocalPendingPreview"
     }
   ],
-  "deployments": [],
+  "deployments": [
+    {
+      "id": "DEP-001",
+      "providerId": "dpl_62cR91MQQVfz5a1iwpt9yoqH977e",
+      "environment": "production-target-unpromoted",
+      "gitSha": "a315b24a35dd9afcb99752f0395e352abb6500fe",
+      "createdAtUtc": "2026-08-17T18:23:16Z",
+      "readyAtUtc": "2026-08-17T18:24:29Z",
+      "providerBuildMs": 73000,
+      "aliasOutcome": "Unexpected stable alias assigned then removed",
+      "applicationVerification": "Skipped after process-gate violation",
+      "verdict": "FailedProcessGate",
+      "promoted": false
+    },
+    {
+      "id": "DEP-002",
+      "providerId": "dpl_LemQchAQpywdvsEG5K14xBWGn9KE",
+      "environment": "preview",
+      "gitSha": "a315b24a35dd9afcb99752f0395e352abb6500fe",
+      "createdAtUtc": "2026-08-17T18:25:34Z",
+      "readyAtUtc": "2026-08-17T18:26:44Z",
+      "providerBuildMs": 70000,
+      "aliasOutcome": "Protected generated Preview only",
+      "applicationVerification": "Network and all 12 MCP contracts passed; six App UIs passed; gallery 320-pixel layout failed",
+      "verdict": "Failed",
+      "promoted": false
+    }
+  ],
   "waits": [
     {
       "id": "WAIT-001",
@@ -801,6 +1201,30 @@
       "endedAtUtc": "2026-08-17T17:27:11Z",
       "durationMs": 69000,
       "outcome": "Branch-protection retry succeeded."
+    },
+    {
+      "id": "WAIT-002",
+      "classification": "github-actions",
+      "startedAtUtc": "2026-08-17T18:20:04Z",
+      "endedAtUtc": "2026-08-17T18:22:53Z",
+      "durationMs": 169000,
+      "outcome": "The initial exact PR head reached its first all-green applicable check set."
+    },
+    {
+      "id": "WAIT-003",
+      "classification": "vercel-build",
+      "startedAtUtc": "2026-08-17T18:23:16Z",
+      "endedAtUtc": "2026-08-17T18:24:29Z",
+      "durationMs": 73000,
+      "outcome": "DEP-001 became ready but failed the deployment-target process gate."
+    },
+    {
+      "id": "WAIT-004",
+      "classification": "vercel-build",
+      "startedAtUtc": "2026-08-17T18:25:34Z",
+      "endedAtUtc": "2026-08-17T18:26:44Z",
+      "durationMs": 70000,
+      "outcome": "Explicit DEP-002 Preview became ready."
     }
   ],
   "rework": [
@@ -880,6 +1304,50 @@
       "elapsedMs": 12000,
       "retainedWork": "Same YAML API and deterministic build behavior",
       "correctiveDirection": "Exact patched 2.8.3 pin with regenerated lock and SBOM"
+    },
+    {
+      "id": "REWORK-008",
+      "approach": "Unqualified first Vercel deployment command",
+      "reasonChosen": "The new project had explicit automatic-domain controls and no prior deployment",
+      "reasonAbandoned": "Vercel selected Production and assigned the stable alias",
+      "startedAtUtc": "2026-08-17T18:23:16Z",
+      "endedAtUtc": "2026-08-17T18:25:20Z",
+      "elapsedMs": 124000,
+      "retainedWork": "Immutable exact-SHA build and provider timing record",
+      "correctiveDirection": "Explicit target flags and explicit later promotion"
+    },
+    {
+      "id": "REWORK-009",
+      "approach": "Diagnostic redaction of bypass values without redacting object keys",
+      "reasonChosen": "Inspect protection configuration without printing credential values",
+      "reasonAbandoned": "Vercel represents the credential as a property name",
+      "startedAtUtc": "2026-08-17T18:35:40Z",
+      "endedAtUtc": "2026-08-17T18:38:26Z",
+      "elapsedMs": 166000,
+      "retainedWork": "Standard Protection and automation-bypass verification design",
+      "correctiveDirection": "Immediate rotation and state-only projections with no key enumeration"
+    },
+    {
+      "id": "REWORK-010",
+      "approach": "Case-sensitive remote HTML doctype assertion",
+      "reasonChosen": "Fast document-shape check",
+      "reasonAbandoned": "HTML doctypes are case-insensitive and frozen upstream uses uppercase",
+      "startedAtUtc": "2026-08-17T18:39:20Z",
+      "endedAtUtc": "2026-08-17T18:39:46Z",
+      "elapsedMs": 26000,
+      "retainedWork": "MIME, byte-ceiling, resource URI, tool, and dual-era verification",
+      "correctiveDirection": "Standards-insensitive doctype assertion matching the local contract"
+    },
+    {
+      "id": "REWORK-011",
+      "approach": "Mobile browser fixture using the short development build label",
+      "reasonChosen": "Exercise the ordinary local application rendering path",
+      "reasonAbandoned": "It did not represent production-length SHA metadata and missed a real overflow",
+      "startedAtUtc": "2026-08-17T18:41:35Z",
+      "endedAtUtc": "2026-08-17T18:42:57Z",
+      "elapsedMs": 82000,
+      "retainedWork": "Responsive test, 320-pixel viewport, and deployed-browser harness",
+      "correctiveDirection": "Wrap code tokens and always test with a full 40-character build SHA"
     }
   ]
 }
