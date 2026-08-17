@@ -11,8 +11,8 @@
   "totalElapsedMs": null,
   "estimatedActiveMs": null,
   "externalWaitMs": 69000,
-  "ciWaitMs": 169000,
-  "vercelWaitMs": 143000,
+  "ciWaitMs": 311000,
+  "vercelWaitMs": 238000,
   "reworkMs": 1040000,
   "currentPhase": "P6",
   "finalVerdict": "Running",
@@ -100,6 +100,34 @@
       "atUtc": "2026-08-17T18:26:44Z",
       "atLocal": "2026-08-17T20:26:44+02:00",
       "elapsedMs": 4100000
+    },
+    {
+      "id": "M-013",
+      "name": "First fully green exact PR-head Preview",
+      "atUtc": "2026-08-17T18:53:20Z",
+      "atLocal": "2026-08-17T20:53:20+02:00",
+      "elapsedMs": 5696000
+    },
+    {
+      "id": "M-014",
+      "name": "Clean-clone release check passed",
+      "atUtc": "2026-08-17T18:55:20Z",
+      "atLocal": "2026-08-17T20:55:20+02:00",
+      "elapsedMs": 5816000
+    },
+    {
+      "id": "M-015",
+      "name": "Repository public-readiness visibility gate completed",
+      "atUtc": "2026-08-17T18:58:19Z",
+      "atLocal": "2026-08-17T20:58:19+02:00",
+      "elapsedMs": 5995000
+    },
+    {
+      "id": "M-016",
+      "name": "Vercel Git integration connected",
+      "atUtc": "2026-08-17T18:58:34Z",
+      "atLocal": "2026-08-17T20:58:34+02:00",
+      "elapsedMs": 6010000
     }
   ],
   "phases": [
@@ -568,6 +596,83 @@
       "event": "Added safe wrapping for code values and made local browser proof always use a production-length SHA; build, 42 tests, and all ten browser checks passed locally. DEP-002 remains Failed pending a replacement Preview.",
       "result": "Resolved",
       "relatedIdentifier": "ISS-015;REG-008"
+    },
+    {
+      "id": "EVT-035",
+      "atUtc": "2026-08-17T18:53:20Z",
+      "atLocal": "2026-08-17T20:53:20+02:00",
+      "elapsedMs": 5696000,
+      "phase": "P6",
+      "category": "preview-verification",
+      "event": "Replacement DEP-003 at exact head cd7fc1d passed the complete network verifier and all ten deployed browser checks, including six AppBridge interactions and the repaired full-SHA 320-pixel layout.",
+      "result": "Passed",
+      "relatedIdentifier": "DEP-003;M-013;ISS-015;REG-008"
+    },
+    {
+      "id": "EVT-036",
+      "atUtc": "2026-08-17T18:53:48Z",
+      "atLocal": "2026-08-17T20:53:48+02:00",
+      "elapsedMs": 5724000,
+      "phase": "P6",
+      "category": "github-protection",
+      "event": "Recorded the exact Preview verdict as a commit status and required release-check, CodeQL, locked-audit, public-readiness, and vercel-preview-proof with strict up-to-date branch protection.",
+      "result": "Passed",
+      "relatedIdentifier": "cd7fc1de70faef272bb96b625895c3ddfb8d3790"
+    },
+    {
+      "id": "EVT-037",
+      "atUtc": "2026-08-17T18:55:20Z",
+      "atLocal": "2026-08-17T20:55:20+02:00",
+      "elapsedMs": 5816000,
+      "phase": "P6",
+      "category": "clean-clone-verification",
+      "event": "A fresh single-branch clone at exact head cd7fc1d passed release:check, including frozen installation, the full local matrix, scans and audits, deterministic generation, and a production-shaped Vercel build.",
+      "result": "Passed",
+      "relatedIdentifier": "M-014"
+    },
+    {
+      "id": "EVT-038",
+      "atUtc": "2026-08-17T18:56:20Z",
+      "atLocal": "2026-08-17T20:56:20+02:00",
+      "elapsedMs": 5876000,
+      "phase": "P6",
+      "category": "github-merge",
+      "event": "GitHub rejected the green rebase merge because the organization requires signed default-branch commits and GitHub cannot sign an automatic rebase result; selected the allowed signed squash path without changing the PR.",
+      "result": "Resolved",
+      "relatedIdentifier": "ISS-016"
+    },
+    {
+      "id": "EVT-039",
+      "atUtc": "2026-08-17T18:56:45Z",
+      "atLocal": "2026-08-17T20:56:45+02:00",
+      "elapsedMs": 5901000,
+      "phase": "P6",
+      "category": "github-merge",
+      "event": "The signed squash merge remained blocked by the active organization ruleset requiring an approval from someone other than the last pusher and a persisted Code Scanning result; repository-local protection correctly could not bypass the parent policy.",
+      "result": "Investigating",
+      "relatedIdentifier": "ISS-017"
+    },
+    {
+      "id": "EVT-040",
+      "atUtc": "2026-08-17T18:58:19Z",
+      "atLocal": "2026-08-17T20:58:19+02:00",
+      "elapsedMs": 5995000,
+      "phase": "P6",
+      "category": "github-visibility",
+      "event": "After exact Preview, clean-clone, legal, license, provenance, secret, dependency, security, and public-readiness gates passed, changed only the namespaced repository to public so the parent Code Scanning rule and Vercel Git connection could operate.",
+      "result": "Passed",
+      "relatedIdentifier": "M-015;ISS-017"
+    },
+    {
+      "id": "EVT-041",
+      "atUtc": "2026-08-17T18:58:34Z",
+      "atLocal": "2026-08-17T20:58:34+02:00",
+      "elapsedMs": 6010000,
+      "phase": "P6",
+      "category": "vercel-git-integration",
+      "event": "Connected the exact public GitHub repository to the exact Vercel project; Vercel derived forward as Production Branch and retained Node 24, Hono, frozen install, explicit build, and no automatic custom-domain assignment.",
+      "result": "Passed",
+      "relatedIdentifier": "M-016;ISS-010"
     }
   ],
   "issues": [
@@ -849,8 +954,8 @@
       "id": "ISS-010",
       "firstObservedAtUtc": "2026-08-17T18:22:58Z",
       "firstObservedElapsedMs": 3874000,
-      "resolvedAtUtc": null,
-      "resolvedElapsedMs": null,
+      "resolvedAtUtc": "2026-08-17T18:58:34Z",
+      "resolvedElapsedMs": 6010000,
       "phase": "P6",
       "classification": "vercel-git-connection",
       "origin": "external",
@@ -863,14 +968,14 @@
         "Verified the exact GitHub repository visibility and Vercel project scope",
         "Selected manual protected Preview proof until the authorized public-visibility gate is reached"
       ],
-      "finalCorrection": "Pending: after Preview, security, legal, and public-readiness gates pass, make only this repository public and retry the native connection without plan spend.",
+      "finalCorrection": "After Preview, security, legal, and public-readiness gates passed, made only this repository public and connected it without plan spend.",
       "affectedFiles": [],
       "affectedCommits": [],
       "invalidatedProof": ["native-vercel-github-check"],
-      "closingVerification": null,
+      "closingVerification": "The Vercel project link reported only different-ai/openwork-mcp-app-gallery-sol with Production Branch forward.",
       "timeToDetectMs": 0,
-      "timeToRepairMs": null,
-      "status": "Open"
+      "timeToRepairMs": 2136000,
+      "status": "Resolved"
     },
     {
       "id": "ISS-011",
@@ -927,7 +1032,7 @@
         "scripts/dev.ts",
         "scripts/verify-deployment.ts"
       ],
-      "affectedCommits": [],
+      "affectedCommits": ["cd7fc1de70faef272bb96b625895c3ddfb8d3790"],
       "invalidatedProof": ["initial-preview-network-run"],
       "closingVerification": "The exact protected Preview passed network and browser requests with the rotated bypass; unauthenticated access remained protected.",
       "timeToDetectMs": 0,
@@ -985,7 +1090,7 @@
       ],
       "finalCorrection": "Use a case-insensitive doctype assertion without weakening MIME, size, or document-shape checks.",
       "affectedFiles": ["scripts/verify-deployment.ts"],
-      "affectedCommits": [],
+      "affectedCommits": ["cd7fc1de70faef272bb96b625895c3ddfb8d3790"],
       "invalidatedProof": ["first-preview-verifier-run"],
       "closingVerification": "All six current and all six legacy deployed contracts passed in the complete rerun.",
       "timeToDetectMs": 0,
@@ -1018,12 +1123,68 @@
         "public/index.html",
         "public/assets/gallery-fce8a2ed61f288ef.css"
       ],
-      "affectedCommits": [],
+      "affectedCommits": ["cd7fc1de70faef272bb96b625895c3ddfb8d3790"],
       "invalidatedProof": ["DEP-002-overall", "preview-320px-layout"],
-      "closingVerification": "Local production-length build metadata rendered at 320 pixels with no overflow; all ten Playwright checks and 42 Vitest checks passed. Replacement Preview proof remains required.",
+      "closingVerification": "DEP-003 at exact correction commit cd7fc1d passed all ten deployed browser checks, including the full-SHA 320-pixel layout and all six App UIs.",
       "timeToDetectMs": null,
       "timeToRepairMs": 82000,
-      "status": "ResolvedLocalPendingPreview"
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-016",
+      "firstObservedAtUtc": "2026-08-17T18:56:20Z",
+      "firstObservedElapsedMs": 5876000,
+      "resolvedAtUtc": "2026-08-17T18:56:20Z",
+      "resolvedElapsedMs": 5876000,
+      "phase": "P6",
+      "classification": "github-merge-method",
+      "origin": "external",
+      "expectedBehavior": "GitHub merges the exact green PR using the requested linear rebase method.",
+      "observedBehavior": "GitHub rejected rebase because the parent ruleset requires signed commits and GitHub cannot automatically sign rebased commits.",
+      "symptom": "Base branch requires signed commits.",
+      "rootCause": "Automatic rebase merges are incompatible with GitHub's required-signatures implementation.",
+      "attempts": [
+        "Attempted the allowed rebase merge after every exact-head technical gate passed",
+        "Inspected only the exact repository and inherited branch rules",
+        "Selected the other allowed linear method"
+      ],
+      "finalCorrection": "Use GitHub's signed squash merge while retaining full feature history on sol/gallery-v1.",
+      "affectedFiles": [],
+      "affectedCommits": [],
+      "invalidatedProof": ["rebase-merge-attempt"],
+      "closingVerification": "The PR remained open and unchanged; squash is allowed by the active ruleset and preserves linear signed forward history.",
+      "timeToDetectMs": 0,
+      "timeToRepairMs": 0,
+      "status": "Resolved"
+    },
+    {
+      "id": "ISS-017",
+      "firstObservedAtUtc": "2026-08-17T18:56:45Z",
+      "firstObservedElapsedMs": 5901000,
+      "resolvedAtUtc": null,
+      "resolvedElapsedMs": null,
+      "phase": "P6",
+      "classification": "github-organization-ruleset",
+      "origin": "external",
+      "expectedBehavior": "The exact green PR satisfies all inherited default-branch rules without human coordination.",
+      "observedBehavior": "The parent ruleset requires one approval from someone other than the last pusher and a persisted Code Scanning result; private visibility prevented SARIF persistence and the sole operator cannot self-approve.",
+      "symptom": "Repository rule violations found during signed squash merge.",
+      "rootCause": "An active organization ruleset is stricter than the repository-local zero-approval policy and has no repository-scoped bypass actor.",
+      "attempts": [
+        "Verified all repository-required technical statuses",
+        "Attempted the administrator merge path without changing rules",
+        "Confirmed the GitHub connector also authenticates as the PR author and cannot self-approve",
+        "Kept the parent ruleset unchanged",
+        "Completed the authorized public-readiness visibility transition to enable Code Scanning and installed reviewer integrations"
+      ],
+      "finalCorrection": "Pending the newly public exact-head checks and an already-authorized non-author reviewer path; do not weaken or exclude the shared organization ruleset.",
+      "affectedFiles": [],
+      "affectedCommits": [],
+      "invalidatedProof": ["merge", "post-merge-ci", "production-release"],
+      "closingVerification": null,
+      "timeToDetectMs": 0,
+      "timeToRepairMs": null,
+      "status": "Open"
     }
   ],
   "regressions": [
@@ -1155,14 +1316,14 @@
       "detectedAtUtc": "2026-08-17T18:41:35Z",
       "correctedAtUtc": "2026-08-17T18:42:57Z",
       "responsibleCommit": "5d0cba19f21a539e133a8ef079b0c2ade7eac93b",
-      "correctionCommit": null,
+      "correctionCommit": "cd7fc1de70faef272bb96b625895c3ddfb8d3790",
       "symptom": "Full 40-character deployed build SHAs forced the 320-pixel gallery to 356 pixels.",
       "userImpact": "Only the protected failed Preview was affected; no promoted stable origin existed.",
       "invalidatedProof": ["DEP-002-overall", "preview-320px-layout"],
-      "closingVerification": "The corrected local candidate uses production-length SHA fixtures and passes all ten browser checks; replacement Preview proof is pending.",
+      "closingVerification": "DEP-003 at cd7fc1d passed all ten deployed browser checks, including the 320-pixel full-SHA case and all six App UIs.",
       "timeToDetectMs": 1435000,
       "timeToRepairMs": 82000,
-      "status": "ResolvedLocalPendingPreview"
+      "status": "Resolved"
     }
   ],
   "deployments": [
@@ -1190,6 +1351,19 @@
       "aliasOutcome": "Protected generated Preview only",
       "applicationVerification": "Network and all 12 MCP contracts passed; six App UIs passed; gallery 320-pixel layout failed",
       "verdict": "Failed",
+      "promoted": false
+    },
+    {
+      "id": "DEP-003",
+      "providerId": "dpl_F9UeEHw4VQMeroH5dCR7CzkATLvD",
+      "environment": "preview",
+      "gitSha": "cd7fc1de70faef272bb96b625895c3ddfb8d3790",
+      "createdAtUtc": "2026-08-17T18:50:00Z",
+      "readyAtUtc": "2026-08-17T18:51:35Z",
+      "providerBuildMs": 95000,
+      "aliasOutcome": "Protected generated Preview only",
+      "applicationVerification": "Public surface, headers, six current and six legacy MCP contracts, boundaries, post-abort health, all ten browser checks, and six App UIs passed",
+      "verdict": "Passed",
       "promoted": false
     }
   ],
@@ -1225,6 +1399,22 @@
       "endedAtUtc": "2026-08-17T18:26:44Z",
       "durationMs": 70000,
       "outcome": "Explicit DEP-002 Preview became ready."
+    },
+    {
+      "id": "WAIT-005",
+      "classification": "github-actions",
+      "startedAtUtc": "2026-08-17T18:49:55Z",
+      "endedAtUtc": "2026-08-17T18:52:17Z",
+      "durationMs": 142000,
+      "outcome": "Correction head cd7fc1d reached an all-green applicable check set."
+    },
+    {
+      "id": "WAIT-006",
+      "classification": "vercel-build",
+      "startedAtUtc": "2026-08-17T18:50:00Z",
+      "endedAtUtc": "2026-08-17T18:51:35Z",
+      "durationMs": 95000,
+      "outcome": "Replacement DEP-003 Preview became ready and later passed all exact-head proof."
     }
   ],
   "rework": [
